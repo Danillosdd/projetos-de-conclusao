@@ -13,87 +13,6 @@ public class TesteAreas {
     //atributos
 
     //funções e metodos
-    @Test
-    public void testeQuadrado() {
-        // AAA - Arrange, Act, Assert
-        // CEV - Configura, Executa, Valida
-
-        //Configura
-        // Dados de Entrada
-        float lado = 7;
-
-        // Dados de Saída / Resultado Esperado
-        float resultadoEsperado = 49;
-
-        // Executa
-        float resultadoAtual = Main.quadrado(lado);
-
-        // Valida
-        assertEquals(resultadoEsperado, resultadoAtual);
-
-    }
-
-    @Test
-    public void testeRetangulo() {
-        // AAA - Arrange, Act, Assert
-        // CEV - Configura, Executa, Valida
-
-        //Configura
-        // Dados de Entrada
-        float base = 35;
-        float altura = 2.5f;
-
-        // Dados de Saída / Resultado Esperado
-        float resultadoEsperado = 87.5f;
-
-        // Executa
-        float resultadoAtual = Main.retangulo(base, altura);
-
-        // Valida
-        assertEquals(resultadoEsperado, resultadoAtual);
-
-    }
-
-    @Test
-    public void testeCirculo() {
-        // AAA - Arrange, Act, Assert
-        // CEV - Configura, Executa, Valida
-
-        //Configura
-        // Dados de Entrada
-        float raio = 3;
-
-        // Dados de Saída / Resultado Esperado
-        float resultadoEsperado = 28.274334f; // Área de um círculo: PI * raio^2
-
-        // Executa
-        float resultadoAtual = Main.circulo(raio);
-
-        // Valida
-        assertEquals(resultadoEsperado, resultadoAtual);
-
-    }
-
-    @Test
-    public void testeTriangulo() {
-        // AAA - Arrange, Act, Assert
-        // CEV - Configura, Executa, Valida
-
-        // Configura
-        // Dados de Entrada
-        float base = 5; // Alterado para float para consistência
-        float altura = 7;
-
-        // Dados de Saída / Resultado Esperado
-        float resultadoEsperado = 17.5f; // Área de um triângulo: (base * altura) / 2
-
-        // Executa
-        float resultadoAtual = Main.triangulo(base, altura); // Supondo que o método retorne float
-
-        // Valida
-        assertEquals(resultadoEsperado, resultadoAtual);
-    }
-
     
     // DDT: Data Driver Testing --> Teste Direcionado à Dados
     // Popular: Teste com massa
@@ -129,6 +48,67 @@ public class TesteAreas {
         // Os Dados de entrada e o resultado esperado são lidos da massa de teste acima  
         // Executa
         float resultadoAtual = Main.triangulo(base, altura);
+
+        // Valida
+        assertEquals(resultadoEsperado, resultadoAtual);
+
+    }
+
+    // 2.2 - Teste de unidade simples para o volume de um cubo
+    @Test
+    public void testeVolumeCubo() {
+        // AAA - Arrange, Act, Assert
+        // CEV - Configura, Executa, Valida
+
+        //Configura
+        // Dados de Entrada
+        float lado = 4;
+
+        // Dados de Saída / Resultado Esperado
+        float resultadoEsperado = 64; // Volume de um cubo: lado^3 = 4^3 = 64
+
+        // Executa
+        float resultadoAtual = Main.volumeCubo(lado);
+
+        // Valida
+        assertEquals(resultadoEsperado, resultadoAtual);
+
+    }
+
+    // 2.2 - Teste lendo uma lista de valores para o volume de um paralelepípedo
+    @ParameterizedTest
+    @CsvSource(value = {
+        "2, 3, 4, 24.0",
+        "5, 2, 3, 30.0",
+        "1, 1, 1, 1.0",
+        "6, 4, 2, 48.0",
+        "3.5, 2, 4, 28.0"
+    }, delimiter = ',')
+    public void testeVolumePararelelepipedoDDT(float comprimento, float largura, float altura, float resultadoEsperado) {
+        // AAA - Arrange, Act, Assert
+        // CEV - Configura, Executa, Valida
+
+        //Configura
+        // Os Dados de entrada e o resultado esperado são lidos da massa de teste acima  
+        // Executa
+        float resultadoAtual = Main.volumePararelelepipedo(comprimento, largura, altura);
+
+        // Valida
+        assertEquals(resultadoEsperado, resultadoAtual);
+
+    }
+
+    // 2.3 - Teste com arquivo CSV para volume de uma esfera
+    @ParameterizedTest
+    @CsvFileSource(resources = "csv/esfera.csv", numLinesToSkip = 1, delimiter = ',')
+    public void testeVolumeEsferaCSV(float raio, float resultadoEsperado) {
+        // AAA - Arrange, Act, Assert
+        // CEV - Configura, Executa, Valida
+
+        //Configura
+        // Os Dados de entrada e o resultado esperado são lidos da massa de teste do arquivo CSV
+        // Executa
+        float resultadoAtual = Main.volumeEsfera(raio);
 
         // Valida
         assertEquals(resultadoEsperado, resultadoAtual);
