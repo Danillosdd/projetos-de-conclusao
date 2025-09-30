@@ -39,12 +39,15 @@ public class TesteUnidade {
     }
 
     @ParameterizedTest
-    @CsvFileSource(resources = "csv/esfera.csv", numLinesToSkip = 1, delimiter = ',')
+    @CsvFileSource(resources = "/csv/esfera.csv", numLinesToSkip = 1, delimiter = ',')
     public void testeVolumeEsferaCSV(float raio, float resultadoEsperado) {
+        
+        // Executa o método sob teste
         float resultadoAtual = Main.volumeEsfera(raio);
-
-        assertEquals(resultadoEsperado, resultadoAtual);
-
+        
+        // Verifica se o resultado atual é igual ao esperado com tolerância para ponto flutuante
+        assertEquals(resultadoEsperado, resultadoAtual, 0.001f, 
+            "Volume da esfera não confere para raio: " + raio);
     }
 
 }
