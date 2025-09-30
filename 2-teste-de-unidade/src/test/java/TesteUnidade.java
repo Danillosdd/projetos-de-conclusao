@@ -6,7 +6,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 
 import com.iterasys.Main;
 
-public class TesteAreas {
+public class TesteUnidade {
 
     @Test
     public void testeVolumeCubo() {
