@@ -1,4 +1,4 @@
-username,password
+nomeUsuario,senha
 admin,password123
-testuser,mypassword
-manager,admin123
+usuario1,senhaErrada
+testUser,123456

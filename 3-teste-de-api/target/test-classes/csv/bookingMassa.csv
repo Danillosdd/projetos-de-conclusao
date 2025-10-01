@@ -1,5 +1,5 @@
-firstname,lastname,totalprice,depositpaid,checkin,checkout,additionalneeds
-João,Silva,150,true,2025-10-01,2025-10-05,Breakfast
-Maria,Santos,250,true,2025-11-01,2025-11-10,Lunch and Dinner
-Pedro,Oliveira,300,false,2025-12-15,2025-12-20,WiFi
-Ana,Costa,120,true,2025-09-05,2025-09-08,Late checkout
+primeiroNome,ultimoNome,precoTotal,depositoPago,dataCheckin,dataCheckout,necessidadesAdicionais
+Ana,Silva,200,true,2024-03-01,2024-03-05,Quarto silencioso
+Carlos,Oliveira,180,false,2024-03-10,2024-03-12,Berço para bebê
+Fernanda,Costa,300,true,2024-04-01,2024-04-07,Vista para o mar
+Roberto,Pereira,120,true,2024-04-15,2024-04-17,Café da manhã

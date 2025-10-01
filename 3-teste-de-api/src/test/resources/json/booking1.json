@@ -1,11 +1,11 @@
 {
-    "firstname": "João",
-    "lastname": "Silva",
+    "firstname": "Maria",
+    "lastname": "Santos", 
     "totalprice": 150,
     "depositpaid": true,
     "bookingdates": {
-        "checkin": "2025-10-01",
-        "checkout": "2025-10-05"
+        "checkin": "2024-01-15",
+        "checkout": "2024-01-20"
     },
-    "additionalneeds": "Breakfast"
+    "additionalneeds": "Café da manhã"
 }
