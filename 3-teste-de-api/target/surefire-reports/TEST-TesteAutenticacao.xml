@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TesteAutenticacao" time="11.638" tests="6" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TesteAutenticacao" time="11.274" tests="6" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -13,7 +13,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="BR"/>
     <property name="sun.boot.library.path" value="/home/danillo/.sdkman/candidates/java/17.0.9-tem/lib"/>
-    <property name="sun.java.command" value="/home/danillo/Dropbox/Estudos/Teste de Software/Iterasys/Formacao em Teste de Software/Lista de Exercícios/Projetos de Conclusão/3-teste-de-api/target/surefire/surefirebooter-20251001001716493_3.jar /home/danillo/Dropbox/Estudos/Teste de Software/Iterasys/Formacao em Teste de Software/Lista de Exercícios/Projetos de Conclusão/3-teste-de-api/target/surefire 2025-10-01T00-17-16_318-jvmRun1 surefire-20251001001716493_1tmp surefire_0-20251001001716493_2tmp"/>
+    <property name="sun.java.command" value="/home/danillo/Dropbox/Estudos/Teste de Software/Iterasys/Formacao em Teste de Software/Lista de Exercícios/Projetos de Conclusão/3-teste-de-api/target/surefire/surefirebooter-20251001001754027_3.jar /home/danillo/Dropbox/Estudos/Teste de Software/Iterasys/Formacao em Teste de Software/Lista de Exercícios/Projetos de Conclusão/3-teste-de-api/target/surefire 2025-10-01T00-17-53_863-jvmRun1 surefire-20251001001754027_1tmp surefire_0-20251001001754027_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="test" value="TesteAutenticacao"/>
     <property name="surefire.test.class.path" value="/home/danillo/Dropbox/Estudos/Teste de Software/Iterasys/Formacao em Teste de Software/Lista de Exercícios/Projetos de Conclusão/3-teste-de-api/target/test-classes:/home/danillo/Dropbox/Estudos/Teste de Software/Iterasys/Formacao em Teste de Software/Lista de Exercícios/Projetos de Conclusão/3-teste-de-api/target/classes:/home/danillo/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.1/junit-jupiter-api-5.10.1.jar:/home/danillo/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/danillo/.m2/repository/org/junit/platform/junit-platform-commons/1.10.1/junit-platform-commons-1.10.1.jar:/home/danillo/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/danillo/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.1/junit-jupiter-engine-5.10.1.jar:/home/danillo/.m2/repository/org/junit/platform/junit-platform-engine/1.10.1/junit-platform-engine-1.10.1.jar:/home/danillo/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.1/junit-jupiter-params-5.10.1.jar:/home/danillo/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/home/danillo/.m2/repository/io/rest-assured/rest-assured/5.4.0/rest-assured-5.4.0.jar:/home/danillo/.m2/repository/org/apache/groovy/groovy/4.0.16/groovy-4.0.16.jar:/home/danillo/.m2/repository/org/apache/groovy/groovy-xml/4.0.16/groovy-xml-4.0.16.jar:/home/danillo/.m2/repository/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar:/home/danillo/.m2/repository/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar:/home/danillo/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/home/danillo/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar:/home/danillo/.m2/repository/org/apache/httpcomponents/httpmime/4.5.13/httpmime-4.5.13.jar:/home/danillo/.m2/repository/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.jar:/home/danillo/.m2/repository/io/rest-assured/json-path/5.4.0/json-path-5.4.0.jar:/home/danillo/.m2/repository/org/apache/groovy/groovy-json/4.0.16/groovy-json-4.0.16.jar:/home/danillo/.m2/repository/io/rest-assured/rest-assured-common/5.4.0/rest-assured-common-5.4.0.jar:/home/danillo/.m2/repository/io/rest-assured/xml-path/5.4.0/xml-path-5.4.0.jar:/home/danillo/.m2/repository/org/apache/commons/commons-lang3/3.11/commons-lang3-3.11.jar:/home/danillo/.m2/repository/com/google/code/gson/gson/2.13.1/gson-2.13.1.jar:/home/danillo/.m2/repository/com/google/errorprone/error_prone_annotations/2.38.0/error_prone_annotations-2.38.0.jar:/home/danillo/.m2/repository/org/junit/platform/junit-platform-suite/1.10.1/junit-platform-suite-1.10.1.jar:/home/danillo/.m2/repository/org/junit/platform/junit-platform-suite-api/1.10.1/junit-platform-suite-api-1.10.1.jar:/home/danillo/.m2/repository/org/junit/platform/junit-platform-suite-engine/1.10.1/junit-platform-suite-engine-1.10.1.jar:/home/danillo/.m2/repository/org/junit/platform/junit-platform-suite-commons/1.10.1/junit-platform-suite-commons-1.10.1.jar:/home/danillo/.m2/repository/org/junit/platform/junit-platform-launcher/1.10.1/junit-platform-launcher-1.10.1.jar:"/>
@@ -29,7 +29,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="/home/danillo/Dropbox/Estudos/Teste de Software/Iterasys/Formacao em Teste de Software/Lista de Exercícios/Projetos de Conclusão/3-teste-de-api/target/surefire/surefirebooter-20251001001716493_3.jar"/>
+    <property name="surefire.real.class.path" value="/home/danillo/Dropbox/Estudos/Teste de Software/Iterasys/Formacao em Teste de Software/Lista de Exercícios/Projetos de Conclusão/3-teste-de-api/target/surefire/surefirebooter-20251001001754027_3.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.9+9"/>
     <property name="user.name" value="danillo"/>
@@ -54,21 +54,21 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="testarAutenticacaoComCredenciaisInvalidas" classname="TesteAutenticacao" time="3.459"/>
-  <testcase name="testarAutenticacaoComCredenciaisVazias" classname="TesteAutenticacao" time="1.228"/>
-  <testcase name="testarAutenticacaoComCredenciaisValidas" classname="TesteAutenticacao" time="1.485">
-    <system-out><![CDATA[Token recebido: d9f341caaee49c0
+  <testcase name="testarAutenticacaoComCredenciaisInvalidas" classname="TesteAutenticacao" time="3.431"/>
+  <testcase name="testarAutenticacaoComCredenciaisVazias" classname="TesteAutenticacao" time="1.757"/>
+  <testcase name="testarAutenticacaoComCredenciaisValidas" classname="TesteAutenticacao" time="1.532">
+    <system-out><![CDATA[Token recebido: 03eeca0e1bae47e
 ]]></system-out>
   </testcase>
-  <testcase name="testarAutenticacaoComMassaDeDados(String, String)[1]" classname="TesteAutenticacao" time="1.722">
+  <testcase name="testarAutenticacaoComMassaDeDados(String, String)[1]" classname="TesteAutenticacao" time="0.986">
     <system-out><![CDATA[Teste para usuário: admin - Status: 200
 ]]></system-out>
   </testcase>
-  <testcase name="testarAutenticacaoComMassaDeDados(String, String)[2]" classname="TesteAutenticacao" time="1.965">
+  <testcase name="testarAutenticacaoComMassaDeDados(String, String)[2]" classname="TesteAutenticacao" time="1.121">
     <system-out><![CDATA[Teste para usuário: usuario1 - Status: 200
 ]]></system-out>
   </testcase>
-  <testcase name="testarAutenticacaoComMassaDeDados(String, String)[3]" classname="TesteAutenticacao" time="1.535">
+  <testcase name="testarAutenticacaoComMassaDeDados(String, String)[3]" classname="TesteAutenticacao" time="2.15">
     <system-out><![CDATA[Teste para usuário: testUser - Status: 200
 ]]></system-out>
   </testcase>
