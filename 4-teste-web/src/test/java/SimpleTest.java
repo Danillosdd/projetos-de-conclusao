@@ -84,16 +84,21 @@ public class SimpleTest {
         // Adiciona ao carrinho
         driver.findElement(By.id("add-to-cart")).click();
         
+        // Aguarda um pouco antes de ir para o carrinho
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        
         // Vai para o carrinho
         driver.findElement(By.className("shopping_cart_link")).click();
         
         // Aguarda carregamento da página do carrinho
-        try {
-            wait.until(ExpectedConditions.presenceOfElementLocated(By.className("cart_item")));
-        } catch (Exception e) {
-            // Se não encontrar cart_item, aguarda o carregamento da página do carrinho
-            wait.until(ExpectedConditions.urlContains("cart.html"));
-        }
+        wait.until(ExpectedConditions.or(
+            ExpectedConditions.presenceOfElementLocated(By.className("cart_item")),
+            ExpectedConditions.urlContains("cart.html")
+        ));
         
         // Captura nome e preço no carrinho
         String nomeNoCarrinho = driver.findElement(By.className("inventory_item_name")).getText();
