@@ -84,16 +84,6 @@ public class ComprarProdutosSteps {
         
         System.out.println("✅ Login executado com configurações preventivas...");
         
-        // Tenta fechar modal de senha caso apareça (baseado nos projetos do GitHub)
-        try {
-            Thread.sleep(1000); // Aguarda modal aparecer
-            driver.findElement(By.xpath("//button[text()='OK']")).click();
-            Thread.sleep(500); // Aguarda modal sumir
-            System.out.println("⚠️ Modal de senha fechada");
-        } catch (Exception e) {
-            // Ignora se não encontrar o modal (que é o desejado com as novas configurações)
-        }
-        
         // Aguarda carregamento da página de produtos
         wait.until(ExpectedConditions.presenceOfElementLocated(By.className("inventory_item")));
         System.out.println("✅ Página de produtos carregada!");
