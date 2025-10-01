@@ -29,6 +29,18 @@ public class ComprarProdutosPOSteps {
     private ProductDetailsPage productDetailsPage;
     private CartPage cartPage;
     
+    // Método auxiliar para tratar modal de senha
+    private void tratarModalSenha() {
+        try {
+            WebDriverWait modalWait = new WebDriverWait(driver, Duration.ofSeconds(2));
+            WebElement okButton = modalWait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(), 'OK') or contains(text(), 'ok')]")));
+            okButton.click();
+            System.out.println("⚠️ Modal de senha detectado e fechado");
+        } catch (Exception e) {
+            // Modal não apareceu, continua normalmente
+        }
+    }
+    
     private String nomeProdutoCapturado;
     private String precoProdutoCapturado;
     
@@ -68,17 +80,7 @@ public class ComprarProdutosPOSteps {
     @E("faço login com usuário {string} e senha {string}")
     public void faco_login_com_usuario_e_senha(String usuario, String senha) {
         loginPage.fazerLogin(usuario, senha);
-        
-        // Trata modal de "Mude sua senha" se aparecer
-        try {
-            WebDriverWait modalWait = new WebDriverWait(driver, Duration.ofSeconds(3));
-            WebElement okButton = modalWait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(), 'OK') or contains(text(), 'ok')]")));
-            okButton.click();
-            System.out.println("⚠️ Modal de senha detectado e fechado");
-        } catch (Exception e) {
-            // Modal não apareceu, continua normalmente
-        }
-        
+        tratarModalSenha(); // Trata modal se aparecer
         inventoryPage.aguardarCarregamentoPagina();
     }
     
@@ -107,6 +109,7 @@ public class ComprarProdutosPOSteps {
     @E("vou para a página de detalhes do produto")
     public void vou_para_a_pagina_de_detalhes_do_produto() {
         inventoryPage.clicarNoProduto(nomeProdutoCapturado);
+        tratarModalSenha(); // Trata modal se aparecer durante navegação
         productDetailsPage.aguardarCarregamentoPagina();
     }
     
@@ -132,6 +135,7 @@ public class ComprarProdutosPOSteps {
     public void vou_para_o_carrinho() {
         // Navega diretamente para o carrinho
         driver.get("https://www.saucedemo.com/cart.html");
+        tratarModalSenha(); // Trata modal se aparecer durante navegação
         cartPage.aguardarCarregamentoPagina();
     }
     
