@@ -7,6 +7,6 @@ import org.junit.platform.suite.api.Suite;
     TestBooking.class
 })
 public class TestSuite {
-    // Esta classe serve como um ponto de entrada para executar todos os testes
+    // Esta classe serve como um ponto de entrada para executar todos os testes do Restful Booker
     // Não precisa de métodos, apenas das anotações acima
 }

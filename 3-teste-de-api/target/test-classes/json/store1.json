@@ -1,8 +1,0 @@
-{
-    "id": 1,
-    "petId": 95,
-    "quantity": 1,
-    "shipDate": "2025-08-28T00:00:00.000Z",
-    "status": "placed",
-    "complete": true
-}
