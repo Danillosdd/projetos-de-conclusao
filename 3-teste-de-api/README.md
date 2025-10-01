@@ -22,32 +22,34 @@ src/
 ├── main/java/io/swagger/Main.java
 └── test/
     ├── java/
-    │   ├── AuthRequest.java         # Modelo para requisição de autenticação
-    │   ├── AuthResponse.java        # Modelo para resposta de autenticação
-    │   ├── Booking.java             # Modelo principal de reserva
-    │   ├── BookingDates.java        # Modelo para datas da reserva
-    │   ├── BookingResponse.java     # Modelo para resposta de criação de reserva
-    │   ├── TestAuth.java            # Testes de autenticação
-    │   ├── TestBooking.java         # Testes de operações de reserva
-    │   └── TestSuite.java           # Suite para executar todos os testes
+    │   ├── SolicitacaoAutenticacao.java   # Modelo para requisição de autenticação
+    │   ├── RespostaAutenticacao.java      # Modelo para resposta de autenticação
+    │   ├── Reserva.java                   # Modelo principal de reserva
+    │   ├── DatasReserva.java              # Modelo para datas da reserva
+    │   ├── RespostaReserva.java           # Modelo para resposta de criação de reserva
+    │   ├── TesteAutenticacao.java         # Testes de autenticação
+    │   ├── TesteReserva.java              # Testes de operações de reserva
+    │   └── SuiteDeTestes.java             # Suite para executar todos os testes
     └── resources/
         ├── csv/
-        │   ├── authMassa.csv        # Dados para testes parametrizados de auth
-        │   └── bookingMassa.csv     # Dados para testes parametrizados de booking
+        │   ├── massaDadosAutenticacao.csv # Dados para testes parametrizados de autenticação
+        │   └── massaDadosReserva.csv      # Dados para testes parametrizados de reserva
         └── json/
-            ├── auth1.json           # Dados de exemplo para autenticação
-            └── booking1.json        # Dados de exemplo para reserva
+            ├── autenticacao1.json         # Dados de exemplo para autenticação
+            └── reserva1.json              # Dados de exemplo para reserva
 ```
 
 ## 🧪 Cenários de Teste
 
-### Autenticação (`TestAuth.java`)
+### Autenticação (`TesteAutenticacao.java`)
+
 - ✅ Autenticar com credenciais válidas
 - ❌ Falhar com credenciais inválidas
 - ❌ Falhar com dados vazios
 - 📊 Testes parametrizados com massa de dados
 
-### Reservas (`TestBooking.java`)
+### Reservas (`TesteReserva.java`)
+
 - ✅ Criar nova reserva
 - 📋 Consultar todas as reservas
 - 🔍 Consultar reserva por ID
@@ -61,28 +63,33 @@ src/
 ## 🚀 Como Executar
 
 ### Pré-requisitos
+
 - Java 17 ou superior
 - Maven 3.6 ou superior
 
 ### Executar todos os testes
+
 ```bash
 mvn test
 ```
 
 ### Executar classe específica
+
 ```bash
-mvn test -Dtest=TestAuth
-mvn test -Dtest=TestBooking
+mvn test -Dtest=TesteAutenticacao
+mvn test -Dtest=TesteReserva
 ```
 
 ### Executar teste específico
+
 ```bash
-mvn test -Dtest=TestAuth#testAuthValidCredentials
+mvn test -Dtest=TesteAutenticacao#testarAutenticacaoComCredenciaisValidas
 ```
 
 ## 📊 Dados de Teste
 
-### Credenciais Padrão (auth1.json)
+### Credenciais Padrão (autenticacao1.json)
+
 ```json
 {
     "username": "admin",
@@ -90,19 +97,39 @@ mvn test -Dtest=TestAuth#testAuthValidCredentials
 }
 ```
 
-### Exemplo de Reserva (booking1.json)
+### Exemplo de Reserva (reserva1.json)
+
 ```json
 {
-    "firstname": "João",
-    "lastname": "Silva",
+    "firstname": "Maria",
+    "lastname": "Santos",
     "totalprice": 150,
     "depositpaid": true,
     "bookingdates": {
-        "checkin": "2025-10-01",
-        "checkout": "2025-10-05"
+        "checkin": "2024-01-15",
+        "checkout": "2024-01-20"
     },
-    "additionalneeds": "Breakfast"
+    "additionalneeds": "Café da manhã"
 }
+```
+
+### Massa de Dados - Autenticação (massaDadosAutenticacao.csv)
+
+```csv
+nomeUsuario,senha
+admin,password123
+usuario1,senhaErrada
+testUser,123456
+```
+
+### Massa de Dados - Reserva (massaDadosReserva.csv)
+
+```csv
+primeiroNome,ultimoNome,precoTotal,depositoPago,dataCheckin,dataCheckout,necessidadesAdicionais
+Ana,Silva,200,true,2024-03-01,2024-03-05,Quarto silencioso
+Carlos,Oliveira,180,false,2024-03-10,2024-03-12,Berço para bebê
+Fernanda,Costa,300,true,2024-04-01,2024-04-07,Vista para o mar
+Roberto,Pereira,120,true,2024-04-15,2024-04-17,Café da manhã
 ```
 
 ## 🌐 API Testada
@@ -112,29 +139,32 @@ mvn test -Dtest=TestAuth#testAuthValidCredentials
 
 ### Endpoints Testados
 
-| Método | Endpoint | Descrição |
-|--------|----------|-----------|
-| POST | `/auth` | Autenticação |
-| GET | `/booking` | Listar reservas |
-| POST | `/booking` | Criar reserva |
-| GET | `/booking/{id}` | Consultar reserva |
-| PUT | `/booking/{id}` | Atualizar reserva |
-| DELETE | `/booking/{id}` | Deletar reserva |
+| Método | Endpoint          | Descrição       |
+| ------- | ----------------- | ----------------- |
+| POST    | `/auth`         | Autenticação    |
+| GET     | `/booking`      | Listar reservas   |
+| POST    | `/booking`      | Criar reserva     |
+| GET     | `/booking/{id}` | Consultar reserva |
+| PUT     | `/booking/{id}` | Atualizar reserva |
+| DELETE  | `/booking/{id}` | Deletar reserva   |
 
-## � Configuração
+## 🔧 Configuração
 
 A configuração da API está no método `@BeforeAll` de cada classe de teste:
+
 - **Base URI**: https://restful-booker.herokuapp.com
 - **Content-Type**: application/json
 - **Logging**: Habilitado para falhas de validação
 
-## �📊 Relatórios
+## 📊 Relatórios
 
 Os relatórios de teste são gerados automaticamente em:
+
 - `target/surefire-reports/` - Relatórios do Maven Surefire
 - Console com logs detalhados das requisições e respostas
 
 ### 📝 Notas Importantes
+
 - **Token de Autenticação**: Obtido automaticamente nos testes que necessitam
 - **Massa de Dados**: Utiliza arquivos CSV para testes parametrizados
 - **Validações**: Múltiplas validações por teste (status, body, headers)
@@ -149,15 +179,16 @@ Os relatórios de teste são gerados automaticamente em:
 - **Response Validation**: Validação completa de respostas
 - **Error Handling**: Testes de cenários de erro
 - **Clean Code**: Código organizado e reutilizável
+- **Nomenclatura em Português**: Projeto 100% em português brasileiro
 
 ## ✅ Resultados dos Testes
 
-**Status atual: 36 testes executados - 0 falhas - 100% de sucesso** 🎉
+**Status atual: 18 testes executados - 0 falhas - 100% de sucesso** 🎉
 
-- TestAuth: 6 testes ✅
-- TestBooking: 12 testes ✅  
-- TestSuite: Executa ambas as classes ✅
+- TesteAutenticacao: 6 testes ✅
+- TesteReserva: 12 testes ✅
+- SuiteDeTestes: Executa ambas as classes ✅
 
 ## 🤝 Contribuição
 
-Este projeto faz parte da formação em Teste de Software da Iterasys e demonstra boas práticas em automação de testes de API.
+Este projeto faz parte da formação em Teste de Software da Iterasys e demonstra boas práticas em automação de testes de API com nomenclatura completamente em português brasileiro.
