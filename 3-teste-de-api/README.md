@@ -121,11 +121,24 @@ mvn test -Dtest=TestAuth#testAuthValidCredentials
 | PUT | `/booking/{id}` | Atualizar reserva |
 | DELETE | `/booking/{id}` | Deletar reserva |
 
-## 📊 Relatórios
+## � Configuração
+
+A configuração da API está no método `@BeforeAll` de cada classe de teste:
+- **Base URI**: https://restful-booker.herokuapp.com
+- **Content-Type**: application/json
+- **Logging**: Habilitado para falhas de validação
+
+## �📊 Relatórios
 
 Os relatórios de teste são gerados automaticamente em:
-- `target/surefire-reports/` - Relatórios detalhados em XML/TXT
-- Console com logs das requisições e respostas
+- `target/surefire-reports/` - Relatórios do Maven Surefire
+- Console com logs detalhados das requisições e respostas
+
+### 📝 Notas Importantes
+- **Token de Autenticação**: Obtido automaticamente nos testes que necessitam
+- **Massa de Dados**: Utiliza arquivos CSV para testes parametrizados
+- **Validações**: Múltiplas validações por teste (status, body, headers)
+- **Cleanup**: Alguns testes criam dados temporários removidos automaticamente
 
 ## 🎓 Conceitos Demonstrados
 
