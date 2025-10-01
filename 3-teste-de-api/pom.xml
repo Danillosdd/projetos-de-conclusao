@@ -14,35 +14,52 @@
     </properties>
 
     <dependencies>
-        <!-- JUnit Jupiter API: Biblioteca principal do JUnit 5 para criar e rodar testes unitários -->
+        <!-- JUnit Jupiter BOM para gerenciar versões -->
+        <dependency>
+            <groupId>org.junit</groupId>
+            <artifactId>junit-bom</artifactId>
+            <version>5.10.1</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+
+        <!-- JUnit Jupiter API -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>5.13.0-M3</version>
+            <version>5.10.1</version>
             <scope>test</scope>
         </dependency>
 
-        <!-- Hamcrest: Biblioteca para facilitar as asserções em testes (matchers) -->
+        <!-- JUnit Jupiter Engine -->
         <dependency>
-            <groupId>org.hamcrest</groupId>
-            <artifactId>hamcrest</artifactId>
-            <version>3.0</version>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.10.1</version>
             <scope>test</scope>
         </dependency>
 
-        <!-- Rest-Assured: Biblioteca para automação de testes de APIs REST em Java -->
-        <dependency>
-            <groupId>io.rest-assured</groupId>
-            <artifactId>rest-assured</artifactId>
-            <version>5.5.0</version>
-            <scope>test</scope>
-        </dependency>
-
-        <!-- JUnit Jupiter Params: Permite criar testes parametrizados no JUnit 5 -->
+        <!-- JUnit Jupiter Params -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-params</artifactId>
-            <version>5.13.1</version>
+            <version>5.10.1</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Hamcrest -->
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest</artifactId>
+            <version>2.2</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Rest-Assured -->
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>5.4.0</version>
             <scope>test</scope>
         </dependency>
 
@@ -52,10 +69,13 @@
             <artifactId>gson</artifactId>
             <version>2.13.1</version>
         </dependency>
+        
+        <!-- JUnit Platform Suite API para criação de suites de teste -->
         <dependency>
-            <artifactId>junit</artifactId>
-            <groupId>junit</groupId>
-            <version>4.11</version>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-suite</artifactId>
+            <version>1.10.1</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 

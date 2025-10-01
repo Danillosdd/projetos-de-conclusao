@@ -1,0 +1,5 @@
+firstname,lastname,totalprice,depositpaid,checkin,checkout,additionalneeds
+João,Silva,150,true,2025-10-01,2025-10-05,Breakfast
+Maria,Santos,250,true,2025-11-01,2025-11-10,Lunch and Dinner
+Pedro,Oliveira,300,false,2025-12-15,2025-12-20,WiFi
+Ana,Costa,120,true,2025-09-05,2025-09-08,Late checkout
