@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestBooking" time="20.884" tests="12" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="28.727" tests="0" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -53,102 +53,4 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="testCreateBookingWithMassData(String, String, int, boolean, String, String, String)[1]" classname="TestBooking" time="1.554">
-    <system-out><![CDATA[Token obtido para os testes: 2ae0d24c52186d0
-Booking criado para João Silva com ID: 4565
-]]></system-out>
-  </testcase>
-  <testcase name="testCreateBookingWithMassData(String, String, int, boolean, String, String, String)[1]" classname="TestBooking" time="1.545">
-    <system-out><![CDATA[Token obtido para os testes: f6ccbd14b017afc
-Booking criado para João Silva com ID: 4858
-]]></system-out>
-  </testcase>
-  <testcase name="testCreateBookingWithMassData(String, String, int, boolean, String, String, String)[2]" classname="TestBooking" time="1.862">
-    <system-out><![CDATA[Booking criado para Maria Santos com ID: 4584
-]]></system-out>
-  </testcase>
-  <testcase name="testCreateBookingWithMassData(String, String, int, boolean, String, String, String)[2]" classname="TestBooking" time="1.416">
-    <system-out><![CDATA[Booking criado para Maria Santos com ID: 4868
-]]></system-out>
-  </testcase>
-  <testcase name="testCreateBookingWithMassData(String, String, int, boolean, String, String, String)[3]" classname="TestBooking" time="2.118">
-    <system-out><![CDATA[Booking criado para Pedro Oliveira com ID: 4599
-]]></system-out>
-  </testcase>
-  <testcase name="testCreateBookingWithMassData(String, String, int, boolean, String, String, String)[3]" classname="TestBooking" time="0.823">
-    <system-out><![CDATA[Booking criado para Pedro Oliveira com ID: 4875
-]]></system-out>
-  </testcase>
-  <testcase name="testCreateBookingWithMassData(String, String, int, boolean, String, String, String)[4]" classname="TestBooking" time="1.28">
-    <system-out><![CDATA[Booking criado para Ana Costa com ID: 4610
-]]></system-out>
-  </testcase>
-  <testcase name="testCreateBookingWithMassData(String, String, int, boolean, String, String, String)[4]" classname="TestBooking" time="1.012">
-    <system-out><![CDATA[Booking criado para Ana Costa com ID: 4886
-]]></system-out>
-  </testcase>
-  <testcase name="testGetBookingById" classname="TestBooking" time="2.753">
-    <system-out><![CDATA[Booking 4621 consultado com sucesso
-]]></system-out>
-  </testcase>
-  <testcase name="testGetBookingById" classname="TestBooking" time="1.858">
-    <system-out><![CDATA[Booking 4896 consultado com sucesso
-]]></system-out>
-  </testcase>
-  <testcase name="testGetBookingsByName" classname="TestBooking" time="2.395">
-    <system-out><![CDATA[Filtro por nome funcionou corretamente
-]]></system-out>
-  </testcase>
-  <testcase name="testGetBookingsByName" classname="TestBooking" time="1.011">
-    <system-out><![CDATA[Filtro por nome funcionou corretamente
-]]></system-out>
-  </testcase>
-  <testcase name="testGetNonExistentBooking" classname="TestBooking" time="1.843">
-    <system-out><![CDATA[Teste de booking inexistente passou - retornou 404 como esperado
-]]></system-out>
-  </testcase>
-  <testcase name="testGetNonExistentBooking" classname="TestBooking" time="0.922">
-    <system-out><![CDATA[Teste de booking inexistente passou - retornou 404 como esperado
-]]></system-out>
-  </testcase>
-  <testcase name="testCreateBooking" classname="TestBooking" time="1.074">
-    <system-out><![CDATA[Booking criado com ID: 4687
-]]></system-out>
-  </testcase>
-  <testcase name="testCreateBooking" classname="TestBooking" time="1.092">
-    <system-out><![CDATA[Booking criado com ID: 4928
-]]></system-out>
-  </testcase>
-  <testcase name="testGetBookingsByCheckinDate" classname="TestBooking" time="0.972">
-    <system-out><![CDATA[Filtro por data de check-in funcionou corretamente
-]]></system-out>
-  </testcase>
-  <testcase name="testGetBookingsByCheckinDate" classname="TestBooking" time="0.956">
-    <system-out><![CDATA[Filtro por data de check-in funcionou corretamente
-]]></system-out>
-  </testcase>
-  <testcase name="testGetAllBookings" classname="TestBooking" time="1.311">
-    <system-out><![CDATA[Lista de bookings recuperada com sucesso
-]]></system-out>
-  </testcase>
-  <testcase name="testGetAllBookings" classname="TestBooking" time="2.525">
-    <system-out><![CDATA[Lista de bookings recuperada com sucesso
-]]></system-out>
-  </testcase>
-  <testcase name="testUpdateBooking" classname="TestBooking" time="3.157">
-    <system-out><![CDATA[Booking 4715 atualizado com sucesso
-]]></system-out>
-  </testcase>
-  <testcase name="testUpdateBooking" classname="TestBooking" time="2.428">
-    <system-out><![CDATA[Booking 4967 atualizado com sucesso
-]]></system-out>
-  </testcase>
-  <testcase name="testDeleteBooking" classname="TestBooking" time="3.46">
-    <system-out><![CDATA[Booking 4745 deletado com sucesso
-]]></system-out>
-  </testcase>
-  <testcase name="testDeleteBooking" classname="TestBooking" time="3.749">
-    <system-out><![CDATA[Booking 4987 deletado com sucesso
-]]></system-out>
-  </testcase>
 </testsuite>
