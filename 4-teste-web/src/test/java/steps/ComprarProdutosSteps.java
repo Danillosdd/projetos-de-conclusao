@@ -150,9 +150,6 @@ public class ComprarProdutosSteps {
         }
     }
     
-
-    
-
     
     @E("valido que o nome {string} e preço {string} estão corretos nos detalhes")
     public void valido_que_o_nome_e_preco_estao_corretos_nos_detalhes(String nomeEsperado, String precoEsperado) {
