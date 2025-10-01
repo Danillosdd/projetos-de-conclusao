@@ -128,15 +128,18 @@ public class TesteReserva {
 
         int idReserva = respostaCriacao.jsonPath().getInt("bookingid");
 
+        // Obter um token fresco para a atualização
+        String tokenFresco = obterTokenFresco();
+
         // Criar dados atualizados
         DatasReserva datasAtualizadas = new DatasReserva("2024-02-01", "2024-02-05");
         Reserva reservaAtualizada = new Reserva("João", "Silva", 250, true, datasAtualizadas, "Café da manhã");
         String corpoJsonAtualizacao = gson.toJson(reservaAtualizada);
 
-        // Atualizar a reserva
+        // Atualizar a reserva com token fresco
         given()
                 .contentType(tipoConteudo)
-                .header("Cookie", "token=" + tokenAutenticacao)
+                .header("Cookie", "token=" + tokenFresco)
                 .body(corpoJsonAtualizacao)
                 .when()
                 .put("/booking/" + idReserva)
@@ -167,9 +170,12 @@ public class TesteReserva {
 
         int idReserva = respostaCriacao.jsonPath().getInt("bookingid");
 
-        // Deletar a reserva
+        // Obter um token fresco para a deleção
+        String tokenFresco = obterTokenFresco();
+
+        // Deletar a reserva com token fresco
         given()
-                .header("Cookie", "token=" + tokenAutenticacao)
+                .header("Cookie", "token=" + tokenFresco)
                 .when()
                 .delete("/booking/" + idReserva)
                 .then()
@@ -256,5 +262,19 @@ public class TesteReserva {
     // Método auxiliar para ler arquivos JSON
     private String lerArquivoJson(String caminhoArquivo) throws IOException {
         return new String(Files.readAllBytes(Paths.get(caminhoArquivo)));
+    }
+
+    // Método auxiliar para obter token fresco
+    private String obterTokenFresco() {
+        SolicitacaoAutenticacao solicitacaoAuth = new SolicitacaoAutenticacao("admin", "password123");
+        String corpoJson = gson.toJson(solicitacaoAuth);
+
+        Response resposta = given()
+                .contentType(tipoConteudo)
+                .body(corpoJson)
+                .when()
+                .post("/auth");
+
+        return resposta.jsonPath().getString("token");
     }
 }
