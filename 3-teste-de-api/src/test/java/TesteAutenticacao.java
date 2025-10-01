@@ -93,7 +93,7 @@ public class TesteAutenticacao {
     }
 
     @ParameterizedTest
-    @CsvFileSource(resources = "/csv/massaDadosAuth.csv", numLinesToSkip = 1)
+    @CsvFileSource(resources = "/csv/massaDadosAutenticacao.csv", numLinesToSkip = 1)
     @DisplayName("Teste parametrizado de autenticação com massa de dados")
     public void testarAutenticacaoComMassaDeDados(String nomeUsuario, String senha) {
         SolicitacaoAutenticacao solicitacaoAuth = new SolicitacaoAutenticacao(nomeUsuario, senha);

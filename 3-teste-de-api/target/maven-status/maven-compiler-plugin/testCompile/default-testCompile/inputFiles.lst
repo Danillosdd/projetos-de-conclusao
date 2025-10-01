@@ -1,8 +1,8 @@
-/home/danillo/Dropbox/Estudos/Teste de Software/Iterasys/Formacao em Teste de Software/Lista de Exercícios/Projetos de Conclusão/3-teste-de-api/src/test/java/TestSuite.java
-/home/danillo/Dropbox/Estudos/Teste de Software/Iterasys/Formacao em Teste de Software/Lista de Exercícios/Projetos de Conclusão/3-teste-de-api/src/test/java/AuthResponse.java
-/home/danillo/Dropbox/Estudos/Teste de Software/Iterasys/Formacao em Teste de Software/Lista de Exercícios/Projetos de Conclusão/3-teste-de-api/src/test/java/BookingResponse.java
-/home/danillo/Dropbox/Estudos/Teste de Software/Iterasys/Formacao em Teste de Software/Lista de Exercícios/Projetos de Conclusão/3-teste-de-api/src/test/java/TestBooking.java
-/home/danillo/Dropbox/Estudos/Teste de Software/Iterasys/Formacao em Teste de Software/Lista de Exercícios/Projetos de Conclusão/3-teste-de-api/src/test/java/BookingDates.java
-/home/danillo/Dropbox/Estudos/Teste de Software/Iterasys/Formacao em Teste de Software/Lista de Exercícios/Projetos de Conclusão/3-teste-de-api/src/test/java/AuthRequest.java
-/home/danillo/Dropbox/Estudos/Teste de Software/Iterasys/Formacao em Teste de Software/Lista de Exercícios/Projetos de Conclusão/3-teste-de-api/src/test/java/TestAuth.java
-/home/danillo/Dropbox/Estudos/Teste de Software/Iterasys/Formacao em Teste de Software/Lista de Exercícios/Projetos de Conclusão/3-teste-de-api/src/test/java/Booking.java
+/home/danillo/Dropbox/Estudos/Teste de Software/Iterasys/Formacao em Teste de Software/Lista de Exercícios/Projetos de Conclusão/3-teste-de-api/src/test/java/SuiteDeTestes.java
+/home/danillo/Dropbox/Estudos/Teste de Software/Iterasys/Formacao em Teste de Software/Lista de Exercícios/Projetos de Conclusão/3-teste-de-api/src/test/java/Reserva.java
+/home/danillo/Dropbox/Estudos/Teste de Software/Iterasys/Formacao em Teste de Software/Lista de Exercícios/Projetos de Conclusão/3-teste-de-api/src/test/java/TesteReserva.java
+/home/danillo/Dropbox/Estudos/Teste de Software/Iterasys/Formacao em Teste de Software/Lista de Exercícios/Projetos de Conclusão/3-teste-de-api/src/test/java/RespostaAutenticacao.java
+/home/danillo/Dropbox/Estudos/Teste de Software/Iterasys/Formacao em Teste de Software/Lista de Exercícios/Projetos de Conclusão/3-teste-de-api/src/test/java/DatasReserva.java
+/home/danillo/Dropbox/Estudos/Teste de Software/Iterasys/Formacao em Teste de Software/Lista de Exercícios/Projetos de Conclusão/3-teste-de-api/src/test/java/TesteAutenticacao.java
+/home/danillo/Dropbox/Estudos/Teste de Software/Iterasys/Formacao em Teste de Software/Lista de Exercícios/Projetos de Conclusão/3-teste-de-api/src/test/java/SolicitacaoAutenticacao.java
+/home/danillo/Dropbox/Estudos/Teste de Software/Iterasys/Formacao em Teste de Software/Lista de Exercícios/Projetos de Conclusão/3-teste-de-api/src/test/java/RespostaReserva.java

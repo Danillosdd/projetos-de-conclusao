@@ -1,8 +1,8 @@
-Booking.class
-AuthResponse.class
-AuthRequest.class
-TestAuth.class
-TestSuite.class
-BookingDates.class
-BookingResponse.class
-TestBooking.class
+RespostaReserva.class
+SolicitacaoAutenticacao.class
+TesteReserva.class
+TesteAutenticacao.class
+SuiteDeTestes.class
+DatasReserva.class
+Reserva.class
+RespostaAutenticacao.class
