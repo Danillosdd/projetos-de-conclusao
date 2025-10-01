@@ -29,8 +29,16 @@ public class ComprarProdutosPOSteps {
     @Before
     public void setUp() {
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
+        
+        // Configurações para o Chrome ser mais estável
+        org.openqa.selenium.chrome.ChromeOptions options = new org.openqa.selenium.chrome.ChromeOptions();
+        options.addArguments("--headless=new");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--disable-gpu");
+        options.addArguments("--window-size=1920,1080");
+        
+        driver = new ChromeDriver(options);
         
         // Inicializa as páginas
         loginPage = new LoginPage(driver);

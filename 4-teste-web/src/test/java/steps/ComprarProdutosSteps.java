@@ -27,9 +27,18 @@ public class ComprarProdutosSteps {
     @Before
     public void setUp() {
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        driver.manage().window().maximize();
+        
+        // Configurações para o Chrome ser mais estável
+        org.openqa.selenium.chrome.ChromeOptions options = new org.openqa.selenium.chrome.ChromeOptions();
+        options.addArguments("--headless=new");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--disable-gpu");
+        options.addArguments("--window-size=1920,1080");
+        
+        driver = new ChromeDriver(options);
+        wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
     
     @After
@@ -109,10 +118,20 @@ public class ComprarProdutosSteps {
     
     @E("vou para o carrinho")
     public void vou_para_o_carrinho() {
+        // Aguarda um pouco para garantir que a página carregou
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        
         driver.findElement(By.className("shopping_cart_link")).click();
         
         // Aguarda carregamento da página do carrinho
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.className("cart_item")));
+        wait.until(ExpectedConditions.or(
+            ExpectedConditions.presenceOfElementLocated(By.className("cart_item")),
+            ExpectedConditions.urlContains("cart.html")
+        ));
     }
     
     @Então("valido que o nome {string} e preço {string} estão corretos no carrinho")

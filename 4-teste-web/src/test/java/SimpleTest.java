@@ -20,9 +20,18 @@ public class SimpleTest {
     @BeforeEach
     public void setUp() {
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        driver.manage().window().maximize();
+        
+        // Configurações para o Chrome ser mais estável
+        org.openqa.selenium.chrome.ChromeOptions options = new org.openqa.selenium.chrome.ChromeOptions();
+        options.addArguments("--headless=new"); // Executa em modo headless
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--disable-gpu");
+        options.addArguments("--window-size=1920,1080");
+        
+        driver = new ChromeDriver(options);
+        wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
     
     @AfterEach
@@ -79,7 +88,12 @@ public class SimpleTest {
         driver.findElement(By.className("shopping_cart_link")).click();
         
         // Aguarda carregamento da página do carrinho
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.className("cart_item")));
+        try {
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.className("cart_item")));
+        } catch (Exception e) {
+            // Se não encontrar cart_item, aguarda o carregamento da página do carrinho
+            wait.until(ExpectedConditions.urlContains("cart.html"));
+        }
         
         // Captura nome e preço no carrinho
         String nomeNoCarrinho = driver.findElement(By.className("inventory_item_name")).getText();
