@@ -30,11 +30,19 @@ public class CartPage extends BasePage {
     }
     
     public String obterNomeProduto() {
-        return driver.findElement(nomeItem).getText();
+        try {
+            return driver.findElement(By.xpath("//div[@class='cart_item']//div[@class='inventory_item_name']")).getText();
+        } catch (Exception e) {
+            return driver.findElement(nomeItem).getText();
+        }
     }
     
     public String obterPrecoProduto() {
-        return driver.findElement(precoItem).getText();
+        try {
+            return driver.findElement(By.xpath("//div[@class='cart_item']//div[@class='inventory_item_price']")).getText();
+        } catch (Exception e) {
+            return driver.findElement(precoItem).getText();
+        }
     }
     
     public String obterQuantidadeProduto() {

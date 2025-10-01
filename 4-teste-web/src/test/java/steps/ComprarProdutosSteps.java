@@ -130,8 +130,20 @@ public class ComprarProdutosSteps {
     
     @Então("valido que o nome {string} e preço {string} estão corretos no carrinho")
     public void valido_que_o_nome_e_preco_estao_corretos_no_carrinho(String nomeEsperado, String precoEsperado) {
-        String nomeNoCarrinho = driver.findElement(By.className("inventory_item_name")).getText();
-        String precoNoCarrinho = driver.findElement(By.className("inventory_item_price")).getText();
+        // Tenta primeiro com a classe do carrinho, depois com a classe padrão
+        String nomeNoCarrinho;
+        try {
+            nomeNoCarrinho = driver.findElement(By.xpath("//div[@class='cart_item']//div[@class='inventory_item_name']")).getText();
+        } catch (Exception e) {
+            nomeNoCarrinho = driver.findElement(By.className("inventory_item_name")).getText();
+        }
+        
+        String precoNoCarrinho;
+        try {
+            precoNoCarrinho = driver.findElement(By.xpath("//div[@class='cart_item']//div[@class='inventory_item_price']")).getText();
+        } catch (Exception e) {
+            precoNoCarrinho = driver.findElement(By.className("inventory_item_price")).getText();
+        }
         
         assertEquals(nomeEsperado, nomeNoCarrinho, "Nome do produto no carrinho deve estar correto");
         assertEquals(precoEsperado, precoNoCarrinho, "Preço do produto no carrinho deve estar correto");

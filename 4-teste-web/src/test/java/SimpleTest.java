@@ -94,8 +94,19 @@ public class SimpleTest {
         ));
         
         // Captura nome e preço no carrinho
-        String nomeNoCarrinho = driver.findElement(By.className("inventory_item_name")).getText();
-        String precoNoCarrinho = driver.findElement(By.className("inventory_item_price")).getText();
+        String nomeNoCarrinho;
+        try {
+            nomeNoCarrinho = driver.findElement(By.xpath("//div[@class='cart_item']//div[@class='inventory_item_name']")).getText();
+        } catch (Exception e) {
+            nomeNoCarrinho = driver.findElement(By.className("inventory_item_name")).getText();
+        }
+        
+        String precoNoCarrinho;
+        try {
+            precoNoCarrinho = driver.findElement(By.xpath("//div[@class='cart_item']//div[@class='inventory_item_price']")).getText();
+        } catch (Exception e) {
+            precoNoCarrinho = driver.findElement(By.className("inventory_item_price")).getText();
+        }
         
         System.out.println("Produto no carrinho: " + nomeNoCarrinho + " - Preço: " + precoNoCarrinho);
         
