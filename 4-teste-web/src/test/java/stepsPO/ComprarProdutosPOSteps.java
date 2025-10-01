@@ -1,8 +1,14 @@
 package stepsPO;
 
+import java.time.Duration;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -62,6 +68,17 @@ public class ComprarProdutosPOSteps {
     @E("faço login com usuário {string} e senha {string}")
     public void faco_login_com_usuario_e_senha(String usuario, String senha) {
         loginPage.fazerLogin(usuario, senha);
+        
+        // Trata modal de "Mude sua senha" se aparecer
+        try {
+            WebDriverWait modalWait = new WebDriverWait(driver, Duration.ofSeconds(3));
+            WebElement okButton = modalWait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(), 'OK') or contains(text(), 'ok')]")));
+            okButton.click();
+            System.out.println("⚠️ Modal de senha detectado e fechado");
+        } catch (Exception e) {
+            // Modal não apareceu, continua normalmente
+        }
+        
         inventoryPage.aguardarCarregamentoPagina();
     }
     

@@ -59,6 +59,16 @@ public class ComprarProdutosSteps {
         driver.findElement(By.id("password")).sendKeys(senha);
         driver.findElement(By.id("login-button")).click();
         
+        // Trata modal de "Mude sua senha" se aparecer
+        try {
+            WebDriverWait modalWait = new WebDriverWait(driver, Duration.ofSeconds(3));
+            WebElement okButton = modalWait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(), 'OK') or contains(text(), 'ok')]")));
+            okButton.click();
+            System.out.println("⚠️ Modal de senha detectado e fechado");
+        } catch (Exception e) {
+            // Modal não apareceu, continua normalmente
+        }
+        
         // Aguarda carregamento da página de produtos
         wait.until(ExpectedConditions.presenceOfElementLocated(By.className("inventory_item")));
     }
