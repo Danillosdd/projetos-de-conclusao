@@ -1,0 +1,4 @@
+id,username,firstName,lastName,email,password,phone,userStatus
+11,joao,Joao,Souza,joao@email.com,senha123,111111111,1
+12,maria,Maria,Oliveira,maria@email.com,senha456,222222222,1
+13,ana,Ana,Pereira,ana@email.com,senha789,333333333,1
