@@ -1,25 +1,69 @@
-package pages; // Define o pacote do arquivo
+package pages;
 
-import org.openqa.selenium.By; // Importa classe para localizar elementos
-import org.openqa.selenium.WebDriver; // Importa o WebDriver para controlar o navegador
+import java.util.List;
 
-public class CartPage { // Classe que representa a página do carrinho
-    WebDriver driver; // Instância do WebDriver para manipular a página
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
-    public CartPage(WebDriver driver) { // Construtor recebe o driver
-        this.driver = driver;
+public class CartPage extends BasePage {
+    
+    // Elementos da página
+    private final By itensCarrinho = By.className("cart_item");
+    private final By nomeItem = By.className("inventory_item_name");
+    private final By precoItem = By.className("inventory_item_price");
+    private final By quantidadeItem = By.className("cart_quantity");
+    private final By botaoContinuarComprando = By.id("continue-shopping");
+    private final By botaoCheckout = By.id("checkout");
+    private final By botaoRemoverItem = By.xpath("//button[contains(@id,'remove')]");
+    
+    public CartPage(WebDriver driver) {
+        super(driver);
     }
-
-    // Verifica se um produto está presente no carrinho
-    public boolean isProductInCart(String productName) {
-        // Monta o XPath para localizar o produto pelo nome dentro do carrinho
-        String xpath = String.format("//div[@class='cart_item']//div[text()='%s']", productName);
-        // Retorna true se encontrou o produto, false caso contrário
-        return driver.findElements(By.xpath(xpath)).size() > 0;
+    
+    public void aguardarCarregamentoPagina() {
+        wait.until(ExpectedConditions.presenceOfElementLocated(itensCarrinho));
     }
-
-    // Realiza o checkout (prossegue para a próxima etapa da compra)
-    public void checkout() {
-        driver.findElement(By.id("checkout")).click(); // Clica no botão de checkout
+    
+    public String obterNomeProduto() {
+        return driver.findElement(nomeItem).getText();
+    }
+    
+    public String obterPrecoProduto() {
+        return driver.findElement(precoItem).getText();
+    }
+    
+    public String obterQuantidadeProduto() {
+        return driver.findElement(quantidadeItem).getText();
+    }
+    
+    public List<WebElement> obterItensCarrinho() {
+        return driver.findElements(itensCarrinho);
+    }
+    
+    public int obterQuantidadeItensCarrinho() {
+        return obterItensCarrinho().size();
+    }
+    
+    public void continuarComprando() {
+        driver.findElement(botaoContinuarComprando).click();
+    }
+    
+    public void procederCheckout() {
+        driver.findElement(botaoCheckout).click();
+    }
+    
+    public void removerPrimeiroProduto() {
+        driver.findElement(botaoRemoverItem).click();
+    }
+    
+    public boolean isCarrinhoVazio() {
+        try {
+            driver.findElement(itensCarrinho);
+            return false;
+        } catch (Exception e) {
+            return true;
+        }
     }
 }

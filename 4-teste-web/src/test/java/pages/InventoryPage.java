@@ -1,33 +1,67 @@
-package pages; // Define o pacote do arquivo
+package pages;
 
-import org.openqa.selenium.By; // Importa classe para localizar elementos
-import org.openqa.selenium.WebDriver; // Importa o WebDriver para controlar o navegador
+import java.util.List;
 
-public class InventoryPage { // Classe que representa a página de produtos
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
-    WebDriver driver; // Instância do WebDriver para manipular a página
-
-    public InventoryPage(WebDriver driver) { // Construtor recebe o driver
-        this.driver = driver;
+public class InventoryPage extends BasePage {
+    
+    // Elementos da página
+    private final By itensInventario = By.className("inventory_item");
+    private final By linkCarrinho = By.className("shopping_cart_link");
+    private final By contadorCarrinho = By.className("shopping_cart_badge");
+    
+    public InventoryPage(WebDriver driver) {
+        super(driver);
     }
-
-    // Adiciona um produto ao carrinho pelo nome
-    public void addProductToCart(String productName) {
-        // Monta o XPath para localizar o botão "Add to cart" do produto
-        String xpath = String.format("//div[text()='%s']/ancestor::div[@class='inventory_item']//button", productName);
-        driver.findElement(By.xpath(xpath)).click(); // Clica no botão
-        try { Thread.sleep(500); } catch (InterruptedException e) { e.printStackTrace(); } // Aguarda meio segundo
+    
+    public void aguardarCarregamentoPagina() {
+        wait.until(ExpectedConditions.presenceOfElementLocated(itensInventario));
     }
-
-    // Verifica se o produto foi adicionado ao carrinho (botão mudou para "Remove")
-    public boolean isProductAdded(String productName) {
-        // Monta o XPath para localizar o botão "Remove" do produto
-        String xpath = String.format("//div[text()='%s']/ancestor::div[@class='inventory_item']//button[text()='Remove']", productName);
-        return driver.findElements(By.xpath(xpath)).size() > 0; // Retorna true se encontrou o botão "Remove"
+    
+    public String obterNomeProduto(String nomeProduto) {
+        WebElement produto = driver.findElement(By.xpath("//div[@class='inventory_item_name ' and text()='" + nomeProduto + "']"));
+        return produto.getText();
     }
-
-    // Acessa o carrinho de compras
-    public void goToCart() {
-        driver.findElement(By.className("shopping_cart_link")).click(); // Clica no ícone do carrinho
+    
+    public String obterPrecoProduto(String nomeProduto) {
+        WebElement precoElemento = driver.findElement(By.xpath(
+            "//div[@class='inventory_item_name ' and text()='" + nomeProduto + 
+            "']/ancestor::div[@class='inventory_item_label']/following-sibling::div//div[@class='inventory_item_price']"
+        ));
+        return precoElemento.getText();
+    }
+    
+    public void clicarNoProduto(String nomeProduto) {
+        WebElement produto = driver.findElement(By.xpath("//div[@class='inventory_item_name ' and text()='" + nomeProduto + "']"));
+        produto.click();
+    }
+    
+    public void adicionarProdutoAoCarrinho(String nomeProduto) {
+        WebElement botaoAdicionar = driver.findElement(By.xpath(
+            "//div[@class='inventory_item_name ' and text()='" + nomeProduto + 
+            "']/ancestor::div[@class='inventory_item']//button[contains(@id,'add-to-cart')]"
+        ));
+        botaoAdicionar.click();
+    }
+    
+    public void irParaCarrinho() {
+        driver.findElement(linkCarrinho).click();
+    }
+    
+    public int obterQuantidadeItensCarrinho() {
+        try {
+            String quantidade = driver.findElement(contadorCarrinho).getText();
+            return Integer.parseInt(quantidade);
+        } catch (Exception e) {
+            return 0;
+        }
+    }
+    
+    public List<WebElement> listarProdutos() {
+        return driver.findElements(itensInventario);
     }
 }

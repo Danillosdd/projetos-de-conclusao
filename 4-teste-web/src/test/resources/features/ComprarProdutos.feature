@@ -1,10 +1,10 @@
 # language: pt
-Funcionalidade: Comprar produtos no SauceDemo com Page Objects
+Funcionalidade: Comprar produtos no SauceDemo
   Como um usuário do SauceDemo
-  Quero consultar produtos e adicioná-los ao carrinho usando Page Objects
+  Quero consultar produtos e adicioná-los ao carrinho
   Para validar que as informações se mantêm consistentes
 
-  Esquema do Cenário: Validar produto do início ao carrinho com Page Objects
+  Esquema do Cenário: Validar produto do início ao carrinho
     Dado que acesso o site SauceDemo
     E faço login com usuário "standard_user" e senha "secret_sauce"
     Quando seleciono o produto "<produto>"
