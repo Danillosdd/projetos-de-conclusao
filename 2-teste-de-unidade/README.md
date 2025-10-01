@@ -1,15 +1,36 @@
-# Projeto de Teste de Unidade
+# Projeto de Automação de Testes de Unidade - Calculadora de Volumes
 
-Este projeto demonstra a implementação de testes de unidade em Java utilizando JUnit 5, com foco em testes de métodos que calculam volumes de figuras geométricas.
+Este projeto implementa testes de unidade automatizados para métodos de cálculo de volumes de figuras geométricas conforme solicitado no exercício 2 da formação em Teste de Software da Iterasys.
 
-## 🚀 Tecnologias Utilizadas
+## 🎯 Objetivo
 
-- **Java** - Linguagem de programação principal
-- **JUnit 5** - Framework de teste para Java
-- **Maven** - Gerenciador de dependências
+O projeto foi criado para demonstrar diferentes abordagens de testes de unidade em Java, validando cálculos de volumes de figuras geométricas (cubo, paralelepípedo e esfera), implementando desde testes unitários simples até testes parametrizados com dados externos.
+
+## �️ Tecnologias Utilizadas
+
+- **Java 17** - Linguagem de programação
+- **Maven** - Gerenciamento de dependências e build
+- **JUnit 5** - Framework de testes
 - **VS Code** - Ambiente de desenvolvimento
 
-## 📋 Funcionalidades Testadas
+## � Estrutura do Projeto
+
+```
+2-teste-de-unidade/
+├── src/
+│   ├── main/java/
+│   │   └── com/iterasys/
+│   │       └── Main.java                    # Classe com métodos de cálculo de volume
+│   ├── test/java/
+│   │   └── TesteUnidade.java                # Classe com todos os testes unitários
+│   └── test/resources/
+│       └── csv/
+│           └── esfera.csv                   # Dados para testes parametrizados
+├── pom.xml
+└── README.md
+```
+
+## �📋 Funcionalidades Testadas
 
 O projeto testa os seguintes métodos de cálculo de volume da classe `Main`:
 
@@ -43,63 +64,61 @@ O projeto testa os seguintes métodos de cálculo de volume da classe `Main`:
 - Primeira linha do CSV é ignorada (`numLinesToSkip = 1`)
 - Inclui mensagem personalizada de erro com o valor do raio
 
-## 📁 Estrutura do Projeto
-
-```
-2-teste-de-unidade/
-├── src/
-│   ├── main/java/
-│   │   └── com/iterasys/
-│   │       └── Main.java
-│   ├── test/java/
-│   │   └── TesteUnidade.java
-│   └── test/resources/
-│       └── csv/
-│           └── esfera.csv
-├── pom.xml
-└── README.md
-```
-
-## ⚙️ Como Executar
+## 🚀 Como Executar
 
 ### Pré-requisitos
 
-- Java 8 ou superior instalado
-- Maven instalado
-- VS Code com extensão Java
+- **Java 17** ou superior
+- **Maven 3.6** ou superior
+- **VS Code** com extensão Java
 
-### Execução dos Testes
-
-1. **Via linha de comando:**
+### Executar todos os testes
 
 ```bash
-mvn test
+mvn clean test
 ```
 
-2. **Via VS Code:**
-   - Abra o arquivo `TesteUnidade.java`
-   - Clique no ícone "Run Test" ao lado de cada método de teste
-   - Ou use `Ctrl+Shift+P` → "Java: Run Tests"
+### Executar via VS Code
 
-### Execução de Teste Específico
+- Abra o arquivo `TesteUnidade.java`
+- Clique no ícone "Run Test" ao lado de cada método de teste
+- Ou use `Ctrl+Shift+P` → "Java: Run Tests"
+
+### Executar teste específico
 
 ```bash
 # Teste unitário simples do cubo
 mvn test -Dtest=TesteUnidade#testeVolumeCubo
 
-# Teste parametrizado do paralelepípedo
+# Teste parametrizado do paralelepípedo  
 mvn test -Dtest=TesteUnidade#testeVolumePararelelepipedoDDT
 
 # Teste com arquivo CSV da esfera
 mvn test -Dtest=TesteUnidade#testeVolumeEsferaCSV
 ```
 
-## 📊 Relatórios de Teste
+### Executar com logs detalhados
 
-Os resultados dos testes são exibidos no terminal e podem ser visualizados através do painel de testes do VS Code. Exemplo de saída:
+```bash
+mvn clean test -X
+```
+
+## 📊 Resultados dos Testes
+
+### Status Atual: 7 testes executados - 0 falhas - 100% de sucesso 🎉
+
+| Tipo de Teste | Método | Casos | Status |
+|---------------|--------|-------|--------|
+| **Unitário Simples** | testeVolumeCubo | 1 ✅ | ✅ Funcionando |
+| **Parametrizado @CsvSource** | testeVolumePararelelepipedoDDT | 5 ✅ | ✅ Funcionando |
+| **Parametrizado @CsvFileSource** | testeVolumeEsferaCSV | 1 ✅ | ✅ Funcionando |
+| **Total** | **3 métodos** | **7** ✅ | **100% Sucesso** |
+
+### Exemplo de Saída
 
 ```
 [INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0
+[INFO] BUILD SUCCESS
 ```
 
 ## 📝 Dados de Teste
@@ -132,6 +151,8 @@ raio,volume_esperado
 - **Organização de dados de teste** em arquivos de recursos
 - **Mensagens personalizadas de erro** para melhor debugging
 - **Configuração de delimitadores** e pulo de linhas em arquivos CSV
+- **Clean Code** - Código organizado e reutilizável
+- **Nomenclatura em Português** - Projeto 100% em português brasileiro
 
 ## 🔍 Detalhes Técnicos
 
@@ -157,7 +178,10 @@ import org.junit.jupiter.params.provider.CsvSource;
 **Danillo Silva**
 
 - GitHub: [@Danillosdd](https://github.com/Danillosdd)
+- Projeto: [projetos-de-conclusao](https://github.com/Danillosdd/projetos-de-conclusao)
 
 ## 📄 Licença
 
-Este projeto é parte dos estudos de **Formação em Teste de Software** da **Iterasys**.
+Este projeto é parte dos estudos de **Formação em Teste de Software da Iterasys** e demonstra boas práticas em testes unitários com nomenclatura completamente em português brasileiro.
+
+Todas as implementações validam com sucesso os cálculos de volumes das figuras geométricas através de diferentes abordagens de teste.

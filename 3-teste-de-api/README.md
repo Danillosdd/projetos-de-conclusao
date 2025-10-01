@@ -1,6 +1,6 @@
-# Projeto de Automação de Testes da API - Restful Booker
+# Projeto de Automação de Testes de API - Restful Booker
 
-Este repositório contém a automação dos testes da API do Restful Booker, desenvolvido como parte da formação em Teste de Software da Iterasys.
+Este projeto implementa testes de API automatizados para o Restful Booker conforme solicitado no exercício 3 da formação em Teste de Software da Iterasys.
 
 ## 🎯 Objetivo
 
@@ -18,25 +18,30 @@ O projeto foi criado para demonstrar a automação de testes de API utilizando a
 ## 📁 Estrutura do Projeto
 
 ```
-src/
-├── main/java/io/swagger/Main.java
-└── test/
-    ├── java/
-    │   ├── SolicitacaoAutenticacao.java   # Modelo para requisição de autenticação
-    │   ├── RespostaAutenticacao.java      # Modelo para resposta de autenticação
-    │   ├── Reserva.java                   # Modelo principal de reserva
-    │   ├── DatasReserva.java              # Modelo para datas da reserva
-    │   ├── RespostaReserva.java           # Modelo para resposta de criação de reserva
-    │   ├── TesteAutenticacao.java         # Testes de autenticação
-    │   ├── TesteReserva.java              # Testes de operações de reserva
-    │   └── SuiteDeTestes.java             # Suite para executar todos os testes
-    └── resources/
-        ├── csv/
-        │   ├── massaDadosAutenticacao.csv # Dados para testes parametrizados de autenticação
-        │   └── massaDadosReserva.csv      # Dados para testes parametrizados de reserva
-        └── json/
-            ├── autenticacao1.json         # Dados de exemplo para autenticação
-            └── reserva1.json              # Dados de exemplo para reserva
+3-teste-de-api/
+├── src/
+│   ├── main/java/
+│   │   └── io/swagger/
+│   │       └── Main.java
+│   └── test/
+│       ├── java/
+│       │   ├── SolicitacaoAutenticacao.java   # Modelo para requisição de autenticação
+│       │   ├── RespostaAutenticacao.java      # Modelo para resposta de autenticação
+│       │   ├── Reserva.java                   # Modelo principal de reserva
+│       │   ├── DatasReserva.java              # Modelo para datas da reserva
+│       │   ├── RespostaReserva.java           # Modelo para resposta de criação de reserva
+│       │   ├── TesteAutenticacao.java         # Testes de autenticação
+│       │   ├── TesteReserva.java              # Testes de operações de reserva
+│       │   └── SuiteDeTestes.java             # Suite para executar todos os testes
+│       └── resources/
+│           ├── csv/
+│           │   ├── massaDadosAutenticacao.csv # Dados para testes parametrizados de autenticação
+│           │   └── massaDadosReserva.csv      # Dados para testes parametrizados de reserva
+│           └── json/
+│               ├── autenticacao1.json         # Dados de exemplo para autenticação
+│               └── reserva1.json              # Dados de exemplo para reserva
+├── pom.xml
+└── README.md
 ```
 
 ## 🧪 Cenários de Teste
@@ -64,13 +69,13 @@ src/
 
 ### Pré-requisitos
 
-- Java 17 ou superior
-- Maven 3.6 ou superior
+- **Java 17** ou superior
+- **Maven 3.6** ou superior
 
 ### Executar todos os testes
 
 ```bash
-mvn test
+mvn clean test
 ```
 
 ### Executar classe específica
@@ -84,6 +89,12 @@ mvn test -Dtest=TesteReserva
 
 ```bash
 mvn test -Dtest=TesteAutenticacao#testarAutenticacaoComCredenciaisValidas
+```
+
+### Executar com logs detalhados
+
+```bash
+mvn clean test -X
 ```
 
 ## 📊 Dados de Teste
@@ -181,14 +192,33 @@ Os relatórios de teste são gerados automaticamente em:
 - **Clean Code**: Código organizado e reutilizável
 - **Nomenclatura em Português**: Projeto 100% em português brasileiro
 
-## ✅ Resultados dos Testes
+## 📊 Resultados dos Testes
 
-**Status atual: 18 testes executados - 0 falhas - 100% de sucesso** 🎉
+### Status Atual: 18 testes executados - 0 falhas - 100% de sucesso 🎉
 
-- TesteAutenticacao: 6 testes ✅
-- TesteReserva: 12 testes ✅
-- SuiteDeTestes: Executa ambas as classes ✅
+| Classe de Teste | Testes | Tempo | Status |
+|----------------|--------|-------|--------|
+| **TesteAutenticacao** | 6 ✅ | ~3s | ✅ Funcionando |
+| **TesteReserva** | 12 ✅ | ~8s | ✅ Funcionando |
+| **SuiteDeTestes** | Executa ambas as classes | ~11s | ✅ Funcionando |
+| **Total** | **18** ✅ | ~11s | **100% Sucesso** |
 
-## 🤝 Contribuição
+### Exemplo de Saída
 
-Este projeto faz parte da formação em Teste de Software da Iterasys e demonstra boas práticas em automação de testes de API com nomenclatura completamente em português brasileiro.
+```
+[INFO] Tests run: 18, Failures: 0, Errors: 0, Skipped: 0
+[INFO] BUILD SUCCESS
+```
+
+## 👨‍💻 Autor
+
+**Danillo Silva**
+
+- GitHub: [@Danillosdd](https://github.com/Danillosdd)
+- Projeto: [projetos-de-conclusao](https://github.com/Danillosdd/projetos-de-conclusao)
+
+## 📄 Licença
+
+Este projeto é parte dos estudos de **Formação em Teste de Software da Iterasys** e demonstra boas práticas em automação de testes de API com nomenclatura completamente em português brasileiro.
+
+Todas as implementações validam com sucesso as operações de autenticação e gerenciamento de reservas na API Restful Booker através de diferentes cenários de teste.
