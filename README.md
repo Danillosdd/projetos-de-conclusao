@@ -249,7 +249,7 @@ echo "🎉 Todos os testes executados!"
 
 - **GitHub**: [@Danillosdd](https://github.com/Danillosdd)
 - **Projeto**: [projetos-de-conclusao](https://github.com/Danillosdd/projetos-de-conclusao)
-- **LinkedIn**: [Danillo Silva](https://linkedin.com/in/danillo-silva)
+- **LinkedIn**: [@danillosdd](https://www.linkedin.com/in/danillosdd)
 - **Formação**: Teste de Software - Iterasys (2024)
 
 ## 🏫 Sobre a Formação
