@@ -48,21 +48,44 @@ public class ComprarProdutosPOSteps {
     public void setUp() {
         WebDriverManager.chromedriver().setup();
         
-        // Configurações para o Chrome ser mais estável
+        // Configurações baseadas nos projetos que funcionam corretamente
         org.openqa.selenium.chrome.ChromeOptions options = new org.openqa.selenium.chrome.ChromeOptions();
-        // options.addArguments("--headless=new"); // Comentado para ver o navegador funcionando
+        
+        // Flags específicas para desabilitar modal de senha (baseado nos projetos do GitHub)
+        options.addArguments("--disable-save-password-bubble"); // Desabilita sugestão de salvar senha
+        options.addArguments("--disable-infobars"); // Remove barra de informações
+        options.addArguments("--disable-notifications"); // Desabilita notificações
+        options.addArguments("--start-maximized"); // Inicia maximizado
+        options.addArguments("--disable-blink-features=AutomationControlled"); // Oculta automação
+        options.addArguments("--no-default-browser-check"); // Não verifica navegador padrão
+        options.addArguments("--disable-features=PasswordManager,AutofillServerCommunication"); // Desabilita gerenciador de senhas
+        options.addArguments("--disable-extensions"); // Desabilita extensões
+        options.addArguments("--disable-popup-blocking"); // Desabilita bloqueio de pop-ups
+        options.addArguments("--user-data-dir=/tmp/chrome-test-profile"); // Usa perfil temporário
+        options.addArguments("--incognito"); // Modo incógnito
+        options.addArguments("--profile-directory=Default"); // Usa perfil padrão
+        
+        // Configurações adicionais de estabilidade
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--disable-gpu");
-        options.addArguments("--window-size=1920,1080");
+        
+        // Desabilita serviços de senha via preferências (CHAVE DO SUCESSO!)
+        java.util.Map<String, Object> prefs = new java.util.HashMap<>();
+        prefs.put("credentials_enable_service", false); // Desabilita serviço de credenciais
+        prefs.put("profile.password_manager_enabled", false); // Desabilita gerenciador de senhas
+        options.setExperimentalOption("prefs", prefs);
         
         driver = new ChromeDriver(options);
+        driver.manage().window().maximize();
         
         // Inicializa as páginas
         loginPage = new LoginPage(driver);
         inventoryPage = new InventoryPage(driver);
         productDetailsPage = new ProductDetailsPage(driver);
         cartPage = new CartPage(driver);
+        
+        System.out.println("✅ Chrome iniciado com configurações para prevenir modal de senha");
     }
     
     @After
