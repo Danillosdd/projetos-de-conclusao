@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Define o modelo do projeto Maven -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Informações básicas do projeto -->
+    <groupId>com.saucedemo</groupId> <!-- Grupo do projeto -->
+    <artifactId>saucedemoadv142</artifactId> <!-- Nome do artefato -->
+    <version>1.0-SNAPSHOT</version> <!-- Versão do projeto -->
+
+    <!-- Propriedades globais do projeto -->
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source> <!-- Versão do Java para compilar -->
+        <maven.compiler.target>17</maven.compiler.target> <!-- Versão do Java para gerar bytecode -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> <!-- Codificação dos arquivos -->
+    </properties>
+
+    <!-- Dependências do projeto -->
+    <dependencies>
+        <!-- JUnit Platform: Suporte à execução de testes na plataforma JUnit 5 -->
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-suite</artifactId>
+            <version>1.10.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- JUnit Jupiter: API e Engine do JUnit 5 para escrever e rodar testes -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.10.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Hamcrest: Matchers para facilitar asserções em testes -->
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest</artifactId>
+            <version>3.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Selenium Java: Automação de browsers para testes de interface -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>4.25.0</version>
+        </dependency>
+
+        <!-- Cucumber Java: Suporte ao desenvolvimento de testes BDD em Java -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>7.20.1</version>
+        </dependency>
+
+        <!-- Cucumber JUnit Platform Engine: Integração do Cucumber com JUnit Platform -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit-platform-engine</artifactId>
+            <version>7.20.1</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Cucumber PicoContainer: Gerenciamento de dependências para Cucumber -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-picocontainer</artifactId>
+            <version>7.27.2</version>
+        </dependency>
+
+        <!-- WebDriverManager: Gerencia automaticamente os drivers do Selenium -->
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>5.7.0</version>
+        </dependency>
+
+        <!-- JUnit 4: Suporte a testes escritos na versão antiga do JUnit -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Cucumber JUnit: Integração do Cucumber com JUnit 4 -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>7.14.0</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <!-- Configuração do build do Maven -->
+    <build>
+        <plugins>
+            <!-- Plugin para compilar o código Java -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                    <source>17</source>
+                    <target>17</target>
+                </configuration>
+            </plugin>
+
+            <!-- Plugin para executar os testes -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.1.2</version>
+                <configuration>
+                    <properties>
+                        <configurationParameters>
+                            cucumber.junit-platform.naming-strategy=long <!-- Estratégia de nomes para relatórios do Cucumber -->
+                        </configurationParameters>
+                    </properties>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
