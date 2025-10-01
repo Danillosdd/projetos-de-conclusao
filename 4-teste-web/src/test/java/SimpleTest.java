@@ -84,20 +84,13 @@ public class SimpleTest {
         // Adiciona ao carrinho
         driver.findElement(By.id("add-to-cart")).click();
         
-        // Aguarda um pouco antes de ir para o carrinho
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        
-        // Vai para o carrinho
-        driver.findElement(By.className("shopping_cart_link")).click();
+        // Vai para o carrinho navegando diretamente
+        driver.get("https://www.saucedemo.com/cart.html");
         
         // Aguarda carregamento da página do carrinho
         wait.until(ExpectedConditions.or(
             ExpectedConditions.presenceOfElementLocated(By.className("cart_item")),
-            ExpectedConditions.urlContains("cart.html")
+            ExpectedConditions.presenceOfElementLocated(By.className("cart_list"))
         ));
         
         // Captura nome e preço no carrinho

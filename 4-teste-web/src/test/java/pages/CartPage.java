@@ -23,12 +23,10 @@ public class CartPage extends BasePage {
     }
     
     public void aguardarCarregamentoPagina() {
-        try {
-            wait.until(ExpectedConditions.presenceOfElementLocated(itensCarrinho));
-        } catch (Exception e) {
-            // Se não encontrar items no carrinho, aguarda o carregamento da página do carrinho
-            wait.until(ExpectedConditions.urlContains("cart.html"));
-        }
+        wait.until(ExpectedConditions.or(
+            ExpectedConditions.presenceOfElementLocated(itensCarrinho),
+            ExpectedConditions.presenceOfElementLocated(By.className("cart_list"))
+        ));
     }
     
     public String obterNomeProduto() {

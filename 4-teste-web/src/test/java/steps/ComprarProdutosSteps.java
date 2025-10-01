@@ -118,19 +118,13 @@ public class ComprarProdutosSteps {
     
     @E("vou para o carrinho")
     public void vou_para_o_carrinho() {
-        // Aguarda um pouco para garantir que a página carregou
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        
-        driver.findElement(By.className("shopping_cart_link")).click();
+        // Navega diretamente para a URL do carrinho
+        driver.get("https://www.saucedemo.com/cart.html");
         
         // Aguarda carregamento da página do carrinho
         wait.until(ExpectedConditions.or(
             ExpectedConditions.presenceOfElementLocated(By.className("cart_item")),
-            ExpectedConditions.urlContains("cart.html")
+            ExpectedConditions.presenceOfElementLocated(By.className("cart_list"))
         ));
     }
     

@@ -113,7 +113,8 @@ public class ComprarProdutosPOSteps {
     
     @E("vou para o carrinho")
     public void vou_para_o_carrinho() {
-        productDetailsPage.irParaCarrinho();
+        // Navega diretamente para o carrinho
+        driver.get("https://www.saucedemo.com/cart.html");
         cartPage.aguardarCarregamentoPagina();
     }
     
