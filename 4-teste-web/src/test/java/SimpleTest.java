@@ -23,7 +23,7 @@ public class SimpleTest {
         
         // Configurações para o Chrome ser mais estável
         org.openqa.selenium.chrome.ChromeOptions options = new org.openqa.selenium.chrome.ChromeOptions();
-        options.addArguments("--headless=new"); // Executa em modo headless
+        // options.addArguments("--headless=new"); // Comentado para ver o navegador funcionando
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--disable-gpu");

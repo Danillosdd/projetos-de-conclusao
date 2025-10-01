@@ -30,7 +30,7 @@ public class ComprarProdutosSteps {
         
         // Configurações para o Chrome ser mais estável
         org.openqa.selenium.chrome.ChromeOptions options = new org.openqa.selenium.chrome.ChromeOptions();
-        options.addArguments("--headless=new");
+        // options.addArguments("--headless=new"); // Comentado para ver o navegador funcionando
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--disable-gpu");
