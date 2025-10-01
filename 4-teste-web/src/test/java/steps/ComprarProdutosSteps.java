@@ -127,24 +127,15 @@ public class ComprarProdutosSteps {
     
     @E("vou para a página de detalhes do produto")
     public void vou_para_a_pagina_de_detalhes_do_produto() {
-        // Estratégia mais direta: navegar imediatamente por URL (mais confiável)
+        // Estratégia direta: navegar por URL (mais confiável)
         System.out.println("🔄 Navegando diretamente para página de detalhes...");
         
         String produtoId = mapearProdutoParaId(nomeProdutoCapturado);
         driver.get("https://www.saucedemo.com/inventory-item.html?id=" + produtoId);
         
-        // Trata modal uma única vez após navegação
-        tratarModaisPresentes();
-        
         // Aguarda carregamento da página de detalhes
-        try {
-            wait.until(ExpectedConditions.presenceOfElementLocated(By.className("inventory_details_name")));
-            System.out.println("✅ Navegação direta bem-sucedida");
-        } catch (Exception e) {
-            System.out.println("⚠️ Tentando novamente após tratar modal...");
-            tratarModaisPresentes();
-            wait.until(ExpectedConditions.presenceOfElementLocated(By.className("inventory_details_name")));
-        }
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.className("inventory_details_name")));
+        System.out.println("✅ Navegação direta bem-sucedida");
     }
     
     private String mapearProdutoParaId(String nomeProduto) {
@@ -159,73 +150,7 @@ public class ComprarProdutosSteps {
         }
     }
     
-    private void tratarModaisPresentes() {
-        // Estratégia mais agressiva: usar JavaScript para fechar modais diretamente
-        try {
-            // Primeiro: tenta fechar via JavaScript qualquer modal visível
-            String jsScript = """
-                // Procura por modais de senha especificamente
-                var modalSenha = document.querySelector('div[id*="modal"], div[class*="modal"], div[role="dialog"]');
-                if (modalSenha && modalSenha.innerText && modalSenha.innerText.includes('senha')) {
-                    console.log('Modal de senha encontrada via JS');
-                    var botaoOK = modalSenha.querySelector('button') || document.querySelector('button[style*="255, 121, 63"]');
-                    if (botaoOK) {
-                        botaoOK.click();
-                        return 'senha-fechada';
-                    }
-                }
-                
-                // Segundo: procura qualquer modal genérica
-                var botoes = document.querySelectorAll('button');
-                for (var i = 0; i < botoes.length; i++) {
-                    var botao = botoes[i];
-                    if (botao.innerText === 'OK' && botao.offsetParent !== null) {
-                        botao.click();
-                        return 'modal-fechada';
-                    }
-                }
-                return 'nenhuma-modal';
-                """;
-            
-            String resultado = (String) ((org.openqa.selenium.JavascriptExecutor) driver).executeScript(jsScript);
-            
-            if ("senha-fechada".equals(resultado)) {
-                System.out.println("✅ Modal de senha fechada via JavaScript!");
-                Thread.sleep(1000); // Aguarda um pouco mais após fechar modal de senha
-                return;
-            } else if ("modal-fechada".equals(resultado)) {
-                System.out.println("✅ Modal genérica fechada via JavaScript!");
-                Thread.sleep(500);
-                return;
-            }
-            
-        } catch (Exception jsException) {
-            // Se JavaScript falhar, usa método tradicional mais focado
-        }
-        
-        // Fallback: método tradicional mais focado (apenas seletores mais específicos)
-        String[] seletoresFocados = {
-            "//div[contains(text(), 'Mude sua senha')]//following::button[text()='OK'][1]",
-            "//button[text()='OK' and contains(@style, '255, 121, 63')]",
-            "//button[text()='OK']"
-        };
-        
-        for (String seletor : seletoresFocados) {
-            try {
-                WebDriverWait modalWait = new WebDriverWait(driver, Duration.ofSeconds(1)); // Reduzido para 1 segundo
-                WebElement botaoModal = modalWait.until(ExpectedConditions.elementToBeClickable(By.xpath(seletor)));
-                
-                // Clique direto via JavaScript
-                ((org.openqa.selenium.JavascriptExecutor) driver).executeScript("arguments[0].click();", botaoModal);
-                System.out.println("⚠️ Modal fechada com seletor: " + seletor);
-                
-                Thread.sleep(300);
-                return;
-            } catch (Exception e) {
-                // Continua para próximo seletor
-            }
-        }
-    }
+
     
 
     
@@ -248,9 +173,6 @@ public class ComprarProdutosSteps {
         WebElement botaoAdicionar = wait.until(ExpectedConditions.elementToBeClickable(By.id("add-to-cart")));
         botaoAdicionar.click();
         
-        // Trata modal apenas uma vez após adicionar
-        tratarModaisPresentes();
-        
         System.out.println("✅ Produto adicionado ao carrinho");
     }
     
@@ -260,22 +182,13 @@ public class ComprarProdutosSteps {
         System.out.println("🛒 Navegando diretamente para o carrinho...");
         driver.get("https://www.saucedemo.com/cart.html");
         
-        // Trata modal uma única vez
-        tratarModaisPresentes();
-        
         // Aguarda carregamento da página do carrinho
-        try {
-            wait.until(ExpectedConditions.or(
-                ExpectedConditions.presenceOfElementLocated(By.className("cart_item")),
-                ExpectedConditions.presenceOfElementLocated(By.className("cart_list")),
-                ExpectedConditions.urlContains("cart.html")
-            ));
-            System.out.println("✅ Navegação para carrinho bem-sucedida");
-        } catch (Exception e) {
-            System.out.println("⚠️ Tentando novamente após tratar modal...");
-            tratarModaisPresentes();
-            wait.until(ExpectedConditions.urlContains("cart.html"));
-        }
+        wait.until(ExpectedConditions.or(
+            ExpectedConditions.presenceOfElementLocated(By.className("cart_item")),
+            ExpectedConditions.presenceOfElementLocated(By.className("cart_list")),
+            ExpectedConditions.urlContains("cart.html")
+        ));
+        System.out.println("✅ Navegação para carrinho bem-sucedida");
     }
     
     @Então("valido que o nome {string} e preço {string} estão corretos no carrinho")
