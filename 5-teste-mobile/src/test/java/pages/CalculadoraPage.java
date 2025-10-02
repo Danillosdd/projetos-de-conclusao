@@ -5,11 +5,16 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
+import java.time.Duration;
 
 public class CalculadoraPage {
     private AppiumDriver<MobileElement> driver;
+    private WebDriverWait wait;
 
-    // Elementos da calculadora
+    // Elementos da calculadora do Google
     @FindBy(id = "com.google.android.calculator:id/digit_0")
     private MobileElement btn0;
 
@@ -54,43 +59,66 @@ public class CalculadoraPage {
 
     public CalculadoraPage(AppiumDriver<MobileElement> driver) {
         this.driver = driver;
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
+        System.out.println("📱 CalculadoraPage inicializada");
     }
 
     public void digitarNumero(String numero) {
+        System.out.println("🔢 Digitando número: " + numero);
+        
         for (char digito : numero.toCharArray()) {
-            switch (digito) {
-                case '0': btn0.click(); break;
-                case '1': btn1.click(); break;
-                case '2': btn2.click(); break;
-                case '3': btn3.click(); break;
-                case '4': btn4.click(); break;
-                case '5': btn5.click(); break;
-                case '6': btn6.click(); break;
-                case '7': btn7.click(); break;
-                case '8': btn8.click(); break;
-                case '9': btn9.click(); break;
-            }
+            MobileElement botao = obterBotaoDigito(digito);
+            wait.until(ExpectedConditions.elementToBeClickable(botao));
+            botao.click();
+        }
+    }
+
+    private MobileElement obterBotaoDigito(char digito) {
+        switch (digito) {
+            case '0': return btn0;
+            case '1': return btn1;
+            case '2': return btn2;
+            case '3': return btn3;
+            case '4': return btn4;
+            case '5': return btn5;
+            case '6': return btn6;
+            case '7': return btn7;
+            case '8': return btn8;
+            case '9': return btn9;
+            default: throw new IllegalArgumentException("Dígito inválido: " + digito);
         }
     }
 
     public void clicarSomar() {
+        System.out.println("➕ Clicando no botão somar");
+        wait.until(ExpectedConditions.elementToBeClickable(btnSomar));
         btnSomar.click();
     }
 
     public void clicarIgual() {
+        System.out.println("= Clicando no botão igual");
+        wait.until(ExpectedConditions.elementToBeClickable(btnIgual));
         btnIgual.click();
     }
 
     public String obterResultado() {
-        return resultado.getText();
+        System.out.println("📊 Obtendo resultado...");
+        wait.until(ExpectedConditions.visibilityOf(resultado));
+        String res = resultado.getText();
+        System.out.println("📊 Resultado obtido: " + res);
+        return res;
     }
 
     public void limparCalculadora() {
+        System.out.println("🧹 Limpando calculadora");
+        wait.until(ExpectedConditions.elementToBeClickable(btnLimpar));
         btnLimpar.click();
     }
 
     public void realizarSoma(String num1, String num2) {
+        System.out.println(String.format("🧮 Realizando operação: %s + %s", num1, num2));
+        
         limparCalculadora();
         digitarNumero(num1);
         clicarSomar();

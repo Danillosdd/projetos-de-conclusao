@@ -4,168 +4,70 @@
 import base.BaseTest;
 import pages.CalculadoraPage;
 import utils.CSVReader;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.Map;
-
-import org.junit.jupiter.api.AfterEach;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
 
-import io.appium.java_client.AppiumBy;
-import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.remote.options.BaseOptions;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.List;
+import java.util.Map;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CalculadoraTest extends BaseTest {
 
-    private AndroidDriver driver;
-
-    private URL getUrl() {
-        try {
-            return new URL(
-                    "https://oauth-danillo-75a98:49d13ae3-a890-47ed-813b-6ab9262151c7@ondemand.us-west-1.saucelabs.com:443/wd/hub");
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
-
-    @BeforeEach
-    public void setUp() {
-        var options = new BaseOptions()
-                .amend("platformName", "Android")
-                .amend("appium:platformVersion", "9.0")
-                .amend("appium:deviceName", "Samsung Galaxy S9 FHD GoogleAPI Emulator")
-                .amend("appium:deviceOrientation", "portrait")
-                .amend("appium:app", "storage:filename=Calculator_8.6.1.apk")
-                .amend("appium:appPackage", "com.google.android.calculator")
-                .amend("appium:appActivity", "com.android.calculator2.Calculator")
-                .amend("appium:automationName", "UiAutomator2")
-                .amend("browserName", "")
-                .amend("appium:ensureWebviewsHavePages", true)
-                .amend("appium:nativeWebScreenshot", true)
-                .amend("sauce:options", Map.ofEntries(Map.entry("name", "Appium Desktop Session -- Vscode")))
-                .amend("appium:newCommandTimeout", 3600)
-                .amend("appium:connectHardwareKeyboard", true)
-                .amend("unhandledPromptBehavior", "ignore");
-
-        driver = new AndroidDriver(this.getUrl(), options);
-    }
-
-    @Test
-    public void testeCalculadoraSoma() throws InterruptedException {
-        // Aguarda a calculadora carregar
-        Thread.sleep(3000);
-
-        // Realiza a operação 5 + 3 = 8
-        driver.findElement(AppiumBy.id("com.google.android.calculator:id/digit_5")).click();
-        driver.findElement(AppiumBy.id("com.google.android.calculator:id/op_add")).click();
-        driver.findElement(AppiumBy.id("com.google.android.calculator:id/digit_3")).click();
-        driver.findElement(AppiumBy.id("com.google.android.calculator:id/eq")).click();
-
-        // Verifica o resultado
-        var resultado = driver.findElement(AppiumBy.id("com.google.android.calculator:id/result_final"));
-        assertEquals("8", resultado.getText());
-    }
-
-    @Test
-    public void testeCalculadoraSubtracao() throws InterruptedException {
-        // Aguarda a calculadora carregar
-        Thread.sleep(3000);
-
-        // Realiza a operação 9 - 4 = 5
-        driver.findElement(AppiumBy.id("com.google.android.calculator:id/digit_9")).click();
-        driver.findElement(AppiumBy.id("com.google.android.calculator:id/op_sub")).click();
-        driver.findElement(AppiumBy.id("com.google.android.calculator:id/digit_4")).click();
-        driver.findElement(AppiumBy.id("com.google.android.calculator:id/eq")).click();
-
-        // Verifica o resultado
-        var resultado = driver.findElement(AppiumBy.id("com.google.android.calculator:id/result_final"));
-        assertEquals("5", resultado.getText());
-    }
-
-    @Test
-    public void testeCalculadoraMultiplicacao() throws InterruptedException {
-        // Aguarda a calculadora carregar
-        Thread.sleep(3000);
-
-        // Realiza a operação 6 × 7 = 42
-        driver.findElement(AppiumBy.id("com.google.android.calculator:id/digit_6")).click();
-        driver.findElement(AppiumBy.id("com.google.android.calculator:id/op_mul")).click();
-        driver.findElement(AppiumBy.id("com.google.android.calculator:id/digit_7")).click();
-        driver.findElement(AppiumBy.id("com.google.android.calculator:id/eq")).click();
-
-        // Verifica o resultado
-        var resultado = driver.findElement(AppiumBy.id("com.google.android.calculator:id/result_final"));
-        assertEquals("42", resultado.getText());
-    }
-
-    @Test
-    public void testeCalculadoraDivisao() throws InterruptedException {
-        // Aguarda a calculadora carregar
-        Thread.sleep(3000);
-
-        // Realiza a operação 15 ÷ 3 = 5
-        driver.findElement(AppiumBy.id("com.google.android.calculator:id/digit_1")).click();
-        driver.findElement(AppiumBy.id("com.google.android.calculator:id/digit_5")).click();
-        driver.findElement(AppiumBy.id("com.google.android.calculator:id/op_div")).click();
-        driver.findElement(AppiumBy.id("com.google.android.calculator:id/digit_3")).click();
-        driver.findElement(AppiumBy.id("com.google.android.calculator:id/eq")).click();
-
-        // Verifica o resultado
-        var resultado = driver.findElement(AppiumBy.id("com.google.android.calculator:id/result_final"));
-        assertEquals("5", resultado.getText());
-    }
-
+    // 5.1 - Script simples que realiza soma de dois números
     @Test(description = "Teste simples de soma: 5 + 3 = 8")
     public void testeSomaSimples() {
+        System.out.println("🧮 Iniciando teste simples de soma...");
+
         CalculadoraPage calculadora = new CalculadoraPage(driver);
-        
-        // Teste simples: 5 + 3 = 8
+
+        // Realiza soma: 5 + 3 = 8
         calculadora.realizarSoma("5", "3");
-        
+
         String resultado = calculadora.obterResultado();
         Assert.assertEquals(resultado, "8", "O resultado da soma deve ser 8");
-        
-        System.out.println("✅ Teste simples executado: 5 + 3 = " + resultado);
+
+        System.out.println("✅ Teste simples executado com sucesso: 5 + 3 = " + resultado);
     }
 
+    // 5.2 - DataProvider para ler dados do CSV
     @DataProvider(name = "dadosCalculadora")
     public Object[][] fornecerDadosCSV() {
+        System.out.println("📄 Carregando dados do arquivo CSV...");
+
         String caminhoCSV = "src/test/resources/calculos.csv";
         List<String[]> dados = CSVReader.lerCSV(caminhoCSV);
-        
+
+        System.out.println("📊 Carregados " + dados.size() + " casos de teste do CSV");
+
         Object[][] dadosArray = new Object[dados.size()][4];
         for (int i = 0; i < dados.size(); i++) {
             String[] linha = dados.get(i);
             dadosArray[i] = new Object[]{linha[0], linha[1], linha[2], linha[3]};
         }
-        
+
         return dadosArray;
     }
 
-    @Test(dataProvider = "dadosCalculadora", description = "Testes de soma com dados do CSV")
-    public void testeSomaComCSV(String num1, String operacao, String num2, String resultadoEsperado) {
+    // 5.2 - Testes organizados em Page Objects com leitura de CSV
+    @Test(dataProvider = "dadosCalculadora",
+            description = "Testes de soma organizados com Page Objects e dados do CSV")
+    public void testeSomaComPageObjectsECSV(String num1, String operacao, String num2, String resultadoEsperado) {
+        System.out.println(String.format("🔢 Executando teste: %s %s %s = ?", num1, operacao, num2));
+
         CalculadoraPage calculadora = new CalculadoraPage(driver);
-        
+
+        // Realiza a operação usando Page Objects
         calculadora.realizarSoma(num1, num2);
-        
+
         String resultado = calculadora.obterResultado();
-        Assert.assertEquals(resultado, resultadoEsperado, 
-            String.format("O resultado de %s %s %s deve ser %s", num1, operacao, num2, resultadoEsperado));
-        
-        System.out.println(String.format("✅ Teste CSV executado: %s %s %s = %s", 
-            num1, operacao, num2, resultado));
-    }
+        Assert.assertEquals(resultado, resultadoEsperado,
+                String.format("O resultado de %s %s %s deve ser %s", num1, operacao, num2, resultadoEsperado));
 
-    @AfterEach
-    public void tearDown() {
-        if (driver != null) {
-            driver.quit();
-        }
+        System.out.println(String.format("✅ Teste executado com sucesso: %s %s %s = %s",
+                num1, operacao, num2, resultado));
     }
-
 }
