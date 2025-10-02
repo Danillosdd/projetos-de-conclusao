@@ -51,7 +51,7 @@ public class BaseTest {
         sauceOptions.put("username", SAUCE_USERNAME);
         sauceOptions.put("accessKey", SAUCE_ACCESS_KEY);
         sauceOptions.put("build", "Calculadora Google - Build " + System.currentTimeMillis());
-        sauceOptions.put("name", "Teste Calculadora Android - " + java.time.LocalDateTime.now());
+        sauceOptions.put("name", "Testes de Soma com Page Objects e CSV");
         sauceOptions.put("deviceOrientation", "portrait");
         
         return sauceOptions;
