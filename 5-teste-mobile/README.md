@@ -8,7 +8,7 @@ O projeto foi criado para demonstrar a automação de testes mobile utilizando a
 
 ## 🛠️ Tecnologias Utilizadas
 
-- **Java 11** - Linguagem de programação
+- **Java 17** - Linguagem de programação
 - **Maven** - Gerenciamento de dependências e build
 - **TestNG** - Framework de testes
 - **Appium** - Automação de testes mobile
