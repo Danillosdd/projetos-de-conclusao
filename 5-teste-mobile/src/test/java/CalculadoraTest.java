@@ -1,5 +1,3 @@
-package test; // Adicionar declaração de pacote
-
 import java.util.List;
 
 import org.testng.Assert;

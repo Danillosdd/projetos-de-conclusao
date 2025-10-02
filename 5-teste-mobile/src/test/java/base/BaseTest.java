@@ -8,10 +8,11 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import io.appium.java_client.AppiumDriver; // Import necessário que estava faltando
 import io.appium.java_client.android.AndroidDriver;
 
 public class BaseTest {
-    protected AndroidDriver driver; // Usar AndroidDriver diretamente
+    protected AppiumDriver driver; // Agora está corretamente importado
     
     // Configurações do SauceLabs (igual ao seu projeto calculadora142)
     private static final String SAUCE_USERNAME = "oauth-danillo-75a98";

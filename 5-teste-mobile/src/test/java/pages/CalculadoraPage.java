@@ -1,64 +1,65 @@
 package pages;
 
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
-import io.appium.java_client.pagefactory.AppiumFieldDecorator;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-
 import java.time.Duration;
 
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+
 public class CalculadoraPage {
-    private AppiumDriver<MobileElement> driver;
+    private AppiumDriver driver; // Removido o generic <MobileElement>
     private WebDriverWait wait;
 
-    // Elementos da calculadora do Google
+    // Elementos da calculadora do Google - Usando WebElement ao invés de MobileElement
     @FindBy(id = "com.google.android.calculator:id/digit_0")
-    private MobileElement btn0;
+    private WebElement btn0;
 
     @FindBy(id = "com.google.android.calculator:id/digit_1")
-    private MobileElement btn1;
+    private WebElement btn1;
 
     @FindBy(id = "com.google.android.calculator:id/digit_2")
-    private MobileElement btn2;
+    private WebElement btn2;
 
     @FindBy(id = "com.google.android.calculator:id/digit_3")
-    private MobileElement btn3;
+    private WebElement btn3;
 
     @FindBy(id = "com.google.android.calculator:id/digit_4")
-    private MobileElement btn4;
+    private WebElement btn4;
 
     @FindBy(id = "com.google.android.calculator:id/digit_5")
-    private MobileElement btn5;
+    private WebElement btn5;
 
     @FindBy(id = "com.google.android.calculator:id/digit_6")
-    private MobileElement btn6;
+    private WebElement btn6;
 
     @FindBy(id = "com.google.android.calculator:id/digit_7")
-    private MobileElement btn7;
+    private WebElement btn7;
 
     @FindBy(id = "com.google.android.calculator:id/digit_8")
-    private MobileElement btn8;
+    private WebElement btn8;
 
     @FindBy(id = "com.google.android.calculator:id/digit_9")
-    private MobileElement btn9;
+    private WebElement btn9;
 
     @FindBy(id = "com.google.android.calculator:id/op_add")
-    private MobileElement btnSomar;
+    private WebElement btnSomar;
 
     @FindBy(id = "com.google.android.calculator:id/eq")
-    private MobileElement btnIgual;
+    private WebElement btnIgual;
 
     @FindBy(id = "com.google.android.calculator:id/result")
-    private MobileElement resultado;
+    private WebElement resultado;
 
     @FindBy(id = "com.google.android.calculator:id/clr")
-    private MobileElement btnLimpar;
+    private WebElement btnLimpar;
 
-    // Construtor
-    public CalculadoraPage(AppiumDriver<MobileElement> driver) {
+    // Construtor - Removido o generic <MobileElement>
+    public CalculadoraPage(AppiumDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
@@ -70,7 +71,7 @@ public class CalculadoraPage {
         System.out.println("🔢 Digitando número: " + numero);
         
         for (char digito : numero.toCharArray()) {
-            MobileElement botao = obterBotaoDigito(digito);
+            WebElement botao = obterBotaoDigito(digito);
             wait.until(ExpectedConditions.elementToBeClickable(botao));
             botao.click();
             
@@ -83,21 +84,21 @@ public class CalculadoraPage {
         }
     }
 
-    // Método auxiliar para obter o botão do dígito
-    private MobileElement obterBotaoDigito(char digito) {
-        switch (digito) {
-            case '0': return btn0;
-            case '1': return btn1;
-            case '2': return btn2;
-            case '3': return btn3;
-            case '4': return btn4;
-            case '5': return btn5;
-            case '6': return btn6;
-            case '7': return btn7;
-            case '8': return btn8;
-            case '9': return btn9;
-            default: throw new IllegalArgumentException("Dígito inválido: " + digito);
-        }
+    // Método auxiliar para obter o botão do dígito - Retorna WebElement
+    private WebElement obterBotaoDigito(char digito) {
+        return switch (digito) { // Usando switch expression do Java 17
+            case '0' -> btn0;
+            case '1' -> btn1;
+            case '2' -> btn2;
+            case '3' -> btn3;
+            case '4' -> btn4;
+            case '5' -> btn5;
+            case '6' -> btn6;
+            case '7' -> btn7;
+            case '8' -> btn8;
+            case '9' -> btn9;
+            default -> throw new IllegalArgumentException("Dígito inválido: " + digito);
+        };
     }
 
     // Método para clicar no botão somar
