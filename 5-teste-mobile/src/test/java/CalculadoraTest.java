@@ -1,21 +1,22 @@
 //mvn clean test
-//mvn test -Dtest=Calculadora
+//mvn test -Dtest=CalculadoraTest
 
-import base.BaseTest;
-import pages.CalculadoraPage;
-import utils.CSVReader;
+import java.util.List;
+
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import java.util.List;
+import base.BaseTest;
+import pages.CalculadoraPage;
+import utils.CSVReader;
 
 public class CalculadoraTest extends BaseTest {
 
     // 5.1 - Script simples que realiza soma de dois números
-    @Test(description = "Teste simples de soma: 5 + 3 = 8", priority = 1)
+    @Test(description = "5.1 - Teste simples de soma: 5 + 3 = 8", priority = 1)
     public void testeSomaSimples() {
-        System.out.println("🧮 Iniciando teste simples de soma...");
+        System.out.println("🧮 [5.1] Iniciando teste simples de soma...");
         
         CalculadoraPage calculadora = new CalculadoraPage(driver);
         
@@ -25,18 +26,18 @@ public class CalculadoraTest extends BaseTest {
         String resultado = calculadora.obterResultado();
         Assert.assertEquals(resultado, "8", "O resultado da soma deve ser 8");
         
-        System.out.println("✅ Teste simples executado com sucesso: 5 + 3 = " + resultado);
+        System.out.println("✅ [5.1] Teste simples executado com sucesso: 5 + 3 = " + resultado);
     }
 
     // 5.2 - DataProvider para ler dados do CSV
     @DataProvider(name = "dadosCalculadora")
     public Object[][] fornecerDadosCSV() {
-        System.out.println("📄 Carregando dados do arquivo CSV...");
+        System.out.println("📄 [5.2] Carregando dados do arquivo CSV...");
         
         String caminhoCSV = "src/test/resources/calculos.csv";
         List<String[]> dados = CSVReader.lerCSV(caminhoCSV);
         
-        System.out.println("📊 Carregados " + dados.size() + " casos de teste do CSV");
+        System.out.println("📊 [5.2] Carregados " + dados.size() + " casos de teste do CSV");
         
         Object[][] dadosArray = new Object[dados.size()][4];
         for (int i = 0; i < dados.size(); i++) {
@@ -49,10 +50,10 @@ public class CalculadoraTest extends BaseTest {
 
     // 5.2 - Testes organizados em Page Objects com leitura de CSV (pelo menos 3 cálculos)
     @Test(dataProvider = "dadosCalculadora", 
-          description = "Testes de soma organizados com Page Objects e dados do CSV",
+          description = "5.2 - Testes organizados em Page Objects com dados do CSV",
           priority = 2)
     public void testeSomaComPageObjectsECSV(String num1, String operacao, String num2, String resultadoEsperado) {
-        System.out.println(String.format("🔢 Executando teste CSV: %s %s %s = ?", num1, operacao, num2));
+        System.out.println(String.format("🔢 [5.2] Executando teste CSV: %s %s %s = ?", num1, operacao, num2));
         
         CalculadoraPage calculadora = new CalculadoraPage(driver);
         
@@ -63,7 +64,7 @@ public class CalculadoraTest extends BaseTest {
         Assert.assertEquals(resultado, resultadoEsperado, 
             String.format("O resultado de %s %s %s deve ser %s", num1, operacao, num2, resultadoEsperado));
         
-        System.out.println(String.format("✅ Teste CSV executado: %s %s %s = %s", 
+        System.out.println(String.format("✅ [5.2] Teste CSV executado: %s %s %s = %s", 
             num1, operacao, num2, resultado));
     }
 }

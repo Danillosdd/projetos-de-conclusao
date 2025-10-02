@@ -1,57 +1,71 @@
-# Teste Mobile - Calculadora do Google
+# 📱 Teste Mobile - Calculadora do Google
 
-Este projeto implementa testes automatizados para a calculadora do Google utilizando Appium e TestNG.
+Projeto de teste automatizado da calculadora do Google usando **Appium + SauceLabs + TestNG**.
 
-## Estrutura do Projeto
+## 🎯 Objetivos do Projeto
+
+### 5.1 - Script Simples ✅
+
+- Teste simples que realiza soma de dois números (5 + 3 = 8)
+
+### 5.2 - Page Objects + CSV ✅
+
+- Testes organizados em Page Objects
+- Leitura de dados de arquivo CSV
+- Pelo menos 3 cálculos diferentes
+
+## 🏗️ Estrutura do Projeto
 
 ```
-src/
-├── test/
-│   ├── java/
-│   │   ├── pages/
-│   │   │   └── CalculadoraPage.java     # Page Object da calculadora
-│   │   ├── utils/
-│   │   │   └── CSVReader.java           # Utilitário para ler CSV
-│   │   ├── base/
-│   │   │   └── BaseTest.java            # Configuração base do Appium
-│   │   └── CalculadoraTest.java         # Testes da calculadora
-│   └── resources/
-│       └── calculos.csv                 # Dados de teste
+src/test/java/
+├── CalculadoraTest.java         # Testes principais
+├── pages/CalculadoraPage.java   # Page Objects
+├── utils/CSVReader.java         # Leitor de CSV  
+├── base/BaseTest.java          # Config SauceLabs
+└── resources/calculos.csv      # Dados de teste
 ```
 
-## Pré-requisitos
+## 🚀 Tecnologias
 
-1. Java 11+
-2. Maven
-3. Android SDK
-4. Appium Server
-5. Emulador Android ou dispositivo físico
-6. App da Calculadora do Google instalado
+- **Java 11**
+- **Maven**
+- **TestNG**
+- **Appium**
+- **SauceLabs** (Cloud Testing)
+- **Page Object Pattern**
 
-## Como executar
+## 📊 Casos de Teste (CSV)
 
-1. Iniciar o Appium Server:
+| Num1 | Operação | Num2 | Resultado |
+| ---- | ---------- | ---- | --------- |
+| 5    | +          | 3    | 8         |
+| 10   | +          | 7    | 17        |
+| 25   | +          | 15   | 40        |
+
+## ▶️ Como Executar
+
 ```bash
-appium
+# Executar todos os testes
+mvn clean test
+
+# Executar teste específico  
+mvn test -Dtest=CalculadoraTest
+
+# Executar apenas teste simples
+mvn test -Dtest=CalculadoraTest#testeSomaSimples
 ```
 
-2. Iniciar o emulador Android ou conectar dispositivo
+## 🌐 SauceLabs
 
-3. Executar os testes:
-```bash
-mvn test
-```
+Testes executados no **SauceLabs Cloud**:
 
-## Funcionalidades
+- **Dispositivo**: Samsung Galaxy S21 FE 5G GoogleAPI Emulator
+- **Android**: 11.0
+- **App**: Calculadora do Google
 
-- ✅ Teste simples de soma (5 + 3 = 8)
-- ✅ Testes parametrizados com dados do CSV
-- ✅ Page Objects para organização do código
-- ✅ Configuração base reutilizável
+## ✅ Resultados
 
-## Dados de Teste
-
-O arquivo `calculos.csv` contém os seguintes casos de teste:
-- 5 + 3 = 8
-- 10 + 7 = 17
-- 25 + 15 = 40
+- ✅ 5.1 - Teste simples implementado
+- ✅ 5.2 - Page Objects + CSV implementado
+- ✅ Execução em cloud (SauceLabs)
+- ✅ 4 testes executados (1 simples + 3 CSV)
