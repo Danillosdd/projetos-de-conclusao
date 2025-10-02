@@ -2,30 +2,30 @@
 <testng-results ignored="0" total="4" passed="0" failed="0" skipped="4">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-10-01T23:02:19 BRT" name="Surefire suite" finished-at="2025-10-01T23:02:21 BRT" duration-ms="2148">
+  <suite started-at="2025-10-01T23:05:04 BRT" name="Surefire suite" finished-at="2025-10-01T23:05:06 BRT" duration-ms="1864">
     <groups>
     </groups>
-    <test started-at="2025-10-01T23:02:19 BRT" name="Surefire test" finished-at="2025-10-01T23:02:21 BRT" duration-ms="2148">
+    <test started-at="2025-10-01T23:05:04 BRT" name="Surefire test" finished-at="2025-10-01T23:05:06 BRT" duration-ms="1864">
       <class name="CalculadoraTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:CalculadoraTest@2928854b]" started-at="2025-10-01T23:02:19 BRT" name="setUp" finished-at="2025-10-01T23:02:21 BRT" duration-ms="2124" status="FAIL">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:CalculadoraTest@2928854b]" started-at="2025-10-01T23:05:04 BRT" name="setUp" finished-at="2025-10-01T23:05:06 BRT" duration-ms="1839" status="FAIL">
           <exception class="org.openqa.selenium.SessionNotCreatedException">
             <message>
-              <![CDATA[Could not start a new session. Response code 400. Message: No browserName or app specified in session request. Please check our platforms configurator (https://wiki.saucelabs.com/display/DOCS/Platform+Configurator): {'sauce:options': {'username': 'oauth-danillo-75a98', 'name': 'Testes de Soma com Page Objects e CSV', 'app': 'storage:filename=Calculator_8.4 (503542421)_Apkpure.apk', 'appiumVersion': '1.22.2', 'deviceOrientation': 'portrait', 'accessKey': 'XXXXXXXX-XXXX-XXXX-XXXX-XXXX262151c7', 'build': 'Calculadora Google - Teste Mobile v1.0'}, 'appium:deviceName': 'Google Pixel 3 GoogleAPI Emulator', 'appium:automationName': 'UiAutomator2', 'platformName': 'ANDROID', 'appium:platformVersion': '9.0'} 
+              <![CDATA[Could not start a new session. Response code 404. Message: Appium 1.22.2 does not support ANDROID 10.0. Please check our platform configurator (https://saucelabs.com/products/platform-configurator) 
 Host info: host: 'danillo', ip: '192.168.15.23'
 Build info: version: '4.13.0', revision: 'ba948ece5b*'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.14.0-33-generic', java.version: '17.0.9'
 Driver info: io.appium.java_client.android.AndroidDriver
-Command: [null, newSession {capabilities=[{appium:automationName=UiAutomator2, appium:deviceName=Google Pixel 3 GoogleAPI Emulator, appium:platformVersion=9.0, platformName=ANDROID, sauce:options={app=storage:filename=Calculator_8.4 (503542421)_Apkpure.apk, accessKey=49d13ae3-a890-47ed-813b-6ab9262151c7, build=Calculadora Google - Teste Mobile v1.0, appiumVersion=1.22.2, name=Testes de Soma com Page Objects e CSV, deviceOrientation=portrait, username=oauth-danillo-75a98}}], desiredCapabilities=Capabilities {appium:automationName: UiAutomator2, appium:deviceName: Google Pixel 3 GoogleAPI Em..., appium:platformVersion: 9.0, platformName: ANDROID, sauce:options: {accessKey: 49d13ae3-a890-47ed-813b-6ab..., app: storage:filename=Calculator..., appiumVersion: 1.22.2, build: Calculadora Google - Teste ..., deviceOrientation: portrait, name: Testes de Soma com Page Obj..., username: oauth-danillo-75a98}}}]
-Capabilities {appium:automationName: UiAutomator2, appium:deviceName: Google Pixel 3 GoogleAPI Em..., appium:platformVersion: 9.0, platformName: ANDROID, sauce:options: {accessKey: 49d13ae3-a890-47ed-813b-6ab..., app: storage:filename=Calculator..., appiumVersion: 1.22.2, build: Calculadora Google - Teste ..., deviceOrientation: portrait, name: Testes de Soma com Page Obj..., username: oauth-danillo-75a98}}]]>
+Command: [null, newSession {capabilities=[{appium:app=storage:filename=Calculator_8.4 (503542421)_Apkpure.apk, appium:automationName=UiAutomator2, appium:deviceName=Google Pixel 3 GoogleAPI Emulator, appium:platformVersion=10.0, platformName=ANDROID, sauce:options={accessKey=49d13ae3-a890-47ed-813b-6ab9262151c7, build=Calculadora Google - Teste Mobile v1.0, appiumVersion=1.22.2, name=Testes de Soma com Page Objects e CSV, deviceOrientation=portrait, username=oauth-danillo-75a98}}], desiredCapabilities=Capabilities {app: storage:filename=Calculator..., appium:automationName: UiAutomator2, appium:deviceName: Google Pixel 3 GoogleAPI Em..., appium:platformVersion: 10.0, platformName: ANDROID, sauce:options: {accessKey: 49d13ae3-a890-47ed-813b-6ab..., appiumVersion: 1.22.2, build: Calculadora Google - Teste ..., deviceOrientation: portrait, name: Testes de Soma com Page Obj..., username: oauth-danillo-75a98}}}]
+Capabilities {app: storage:filename=Calculator..., appium:automationName: UiAutomator2, appium:deviceName: Google Pixel 3 GoogleAPI Em..., appium:platformVersion: 10.0, platformName: ANDROID, sauce:options: {accessKey: 49d13ae3-a890-47ed-813b-6ab..., appiumVersion: 1.22.2, build: Calculadora Google - Teste ..., deviceOrientation: portrait, name: Testes de Soma com Page Obj..., username: oauth-danillo-75a98}}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 400. Message: No browserName or app specified in session request. Please check our platforms configurator (https://wiki.saucelabs.com/display/DOCS/Platform+Configurator): {'sauce:options': {'username': 'oauth-danillo-75a98', 'name': 'Testes de Soma com Page Objects e CSV', 'app': 'storage:filename=Calculator_8.4 (503542421)_Apkpure.apk', 'appiumVersion': '1.22.2', 'deviceOrientation': 'portrait', 'accessKey': 'XXXXXXXX-XXXX-XXXX-XXXX-XXXX262151c7', 'build': 'Calculadora Google - Teste Mobile v1.0'}, 'appium:deviceName': 'Google Pixel 3 GoogleAPI Emulator', 'appium:automationName': 'UiAutomator2', 'platformName': 'ANDROID', 'appium:platformVersion': '9.0'} 
+              <![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 404. Message: Appium 1.22.2 does not support ANDROID 10.0. Please check our platform configurator (https://saucelabs.com/products/platform-configurator) 
 Host info: host: 'danillo', ip: '192.168.15.23'
 Build info: version: '4.13.0', revision: 'ba948ece5b*'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.14.0-33-generic', java.version: '17.0.9'
 Driver info: io.appium.java_client.android.AndroidDriver
-Command: [null, newSession {capabilities=[{appium:automationName=UiAutomator2, appium:deviceName=Google Pixel 3 GoogleAPI Emulator, appium:platformVersion=9.0, platformName=ANDROID, sauce:options={app=storage:filename=Calculator_8.4 (503542421)_Apkpure.apk, accessKey=49d13ae3-a890-47ed-813b-6ab9262151c7, build=Calculadora Google - Teste Mobile v1.0, appiumVersion=1.22.2, name=Testes de Soma com Page Objects e CSV, deviceOrientation=portrait, username=oauth-danillo-75a98}}], desiredCapabilities=Capabilities {appium:automationName: UiAutomator2, appium:deviceName: Google Pixel 3 GoogleAPI Em..., appium:platformVersion: 9.0, platformName: ANDROID, sauce:options: {accessKey: 49d13ae3-a890-47ed-813b-6ab..., app: storage:filename=Calculator..., appiumVersion: 1.22.2, build: Calculadora Google - Teste ..., deviceOrientation: portrait, name: Testes de Soma com Page Obj..., username: oauth-danillo-75a98}}}]
-Capabilities {appium:automationName: UiAutomator2, appium:deviceName: Google Pixel 3 GoogleAPI Em..., appium:platformVersion: 9.0, platformName: ANDROID, sauce:options: {accessKey: 49d13ae3-a890-47ed-813b-6ab..., app: storage:filename=Calculator..., appiumVersion: 1.22.2, build: Calculadora Google - Teste ..., deviceOrientation: portrait, name: Testes de Soma com Page Obj..., username: oauth-danillo-75a98}}
+Command: [null, newSession {capabilities=[{appium:app=storage:filename=Calculator_8.4 (503542421)_Apkpure.apk, appium:automationName=UiAutomator2, appium:deviceName=Google Pixel 3 GoogleAPI Emulator, appium:platformVersion=10.0, platformName=ANDROID, sauce:options={accessKey=49d13ae3-a890-47ed-813b-6ab9262151c7, build=Calculadora Google - Teste Mobile v1.0, appiumVersion=1.22.2, name=Testes de Soma com Page Objects e CSV, deviceOrientation=portrait, username=oauth-danillo-75a98}}], desiredCapabilities=Capabilities {app: storage:filename=Calculator..., appium:automationName: UiAutomator2, appium:deviceName: Google Pixel 3 GoogleAPI Em..., appium:platformVersion: 10.0, platformName: ANDROID, sauce:options: {accessKey: 49d13ae3-a890-47ed-813b-6ab..., appiumVersion: 1.22.2, build: Calculadora Google - Teste ..., deviceOrientation: portrait, name: Testes de Soma com Page Obj..., username: oauth-danillo-75a98}}}]
+Capabilities {app: storage:filename=Calculator..., appium:automationName: UiAutomator2, appium:deviceName: Google Pixel 3 GoogleAPI Em..., appium:platformVersion: 10.0, platformName: ANDROID, sauce:options: {accessKey: 49d13ae3-a890-47ed-813b-6ab..., appiumVersion: 1.22.2, build: Calculadora Google - Teste ..., deviceOrientation: portrait, name: Testes de Soma com Page Obj..., username: oauth-danillo-75a98}}
 at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:140)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
@@ -41,7 +41,7 @@ at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:163)
 at io.appium.java_client.AppiumDriver.<init>(AppiumDriver.java:89)
 at io.appium.java_client.AppiumDriver.<init>(AppiumDriver.java:101)
 at io.appium.java_client.android.AndroidDriver.<init>(AndroidDriver.java:113)
-at base.BaseTest.setUp(BaseTest.java:38)
+at base.BaseTest.setUp(BaseTest.java:41)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -85,25 +85,25 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testeSomaSimples()[pri:1, instance:CalculadoraTest@2928854b]" started-at="2025-10-01T23:02:21 BRT" name="testeSomaSimples" description="5.1 - Teste simples de soma: 5 + 3 = 8" finished-at="2025-10-01T23:02:21 BRT" duration-ms="0" status="SKIP">
+        <test-method signature="testeSomaSimples()[pri:1, instance:CalculadoraTest@2928854b]" started-at="2025-10-01T23:05:06 BRT" name="testeSomaSimples" description="5.1 - Teste simples de soma: 5 + 3 = 8" finished-at="2025-10-01T23:05:06 BRT" duration-ms="0" status="SKIP">
           <exception class="org.openqa.selenium.SessionNotCreatedException">
             <message>
-              <![CDATA[Could not start a new session. Response code 400. Message: No browserName or app specified in session request. Please check our platforms configurator (https://wiki.saucelabs.com/display/DOCS/Platform+Configurator): {'sauce:options': {'username': 'oauth-danillo-75a98', 'name': 'Testes de Soma com Page Objects e CSV', 'app': 'storage:filename=Calculator_8.4 (503542421)_Apkpure.apk', 'appiumVersion': '1.22.2', 'deviceOrientation': 'portrait', 'accessKey': 'XXXXXXXX-XXXX-XXXX-XXXX-XXXX262151c7', 'build': 'Calculadora Google - Teste Mobile v1.0'}, 'appium:deviceName': 'Google Pixel 3 GoogleAPI Emulator', 'appium:automationName': 'UiAutomator2', 'platformName': 'ANDROID', 'appium:platformVersion': '9.0'} 
+              <![CDATA[Could not start a new session. Response code 404. Message: Appium 1.22.2 does not support ANDROID 10.0. Please check our platform configurator (https://saucelabs.com/products/platform-configurator) 
 Host info: host: 'danillo', ip: '192.168.15.23'
 Build info: version: '4.13.0', revision: 'ba948ece5b*'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.14.0-33-generic', java.version: '17.0.9'
 Driver info: io.appium.java_client.android.AndroidDriver
-Command: [null, newSession {capabilities=[{appium:automationName=UiAutomator2, appium:deviceName=Google Pixel 3 GoogleAPI Emulator, appium:platformVersion=9.0, platformName=ANDROID, sauce:options={app=storage:filename=Calculator_8.4 (503542421)_Apkpure.apk, accessKey=49d13ae3-a890-47ed-813b-6ab9262151c7, build=Calculadora Google - Teste Mobile v1.0, appiumVersion=1.22.2, name=Testes de Soma com Page Objects e CSV, deviceOrientation=portrait, username=oauth-danillo-75a98}}], desiredCapabilities=Capabilities {appium:automationName: UiAutomator2, appium:deviceName: Google Pixel 3 GoogleAPI Em..., appium:platformVersion: 9.0, platformName: ANDROID, sauce:options: {accessKey: 49d13ae3-a890-47ed-813b-6ab..., app: storage:filename=Calculator..., appiumVersion: 1.22.2, build: Calculadora Google - Teste ..., deviceOrientation: portrait, name: Testes de Soma com Page Obj..., username: oauth-danillo-75a98}}}]
-Capabilities {appium:automationName: UiAutomator2, appium:deviceName: Google Pixel 3 GoogleAPI Em..., appium:platformVersion: 9.0, platformName: ANDROID, sauce:options: {accessKey: 49d13ae3-a890-47ed-813b-6ab..., app: storage:filename=Calculator..., appiumVersion: 1.22.2, build: Calculadora Google - Teste ..., deviceOrientation: portrait, name: Testes de Soma com Page Obj..., username: oauth-danillo-75a98}}]]>
+Command: [null, newSession {capabilities=[{appium:app=storage:filename=Calculator_8.4 (503542421)_Apkpure.apk, appium:automationName=UiAutomator2, appium:deviceName=Google Pixel 3 GoogleAPI Emulator, appium:platformVersion=10.0, platformName=ANDROID, sauce:options={accessKey=49d13ae3-a890-47ed-813b-6ab9262151c7, build=Calculadora Google - Teste Mobile v1.0, appiumVersion=1.22.2, name=Testes de Soma com Page Objects e CSV, deviceOrientation=portrait, username=oauth-danillo-75a98}}], desiredCapabilities=Capabilities {app: storage:filename=Calculator..., appium:automationName: UiAutomator2, appium:deviceName: Google Pixel 3 GoogleAPI Em..., appium:platformVersion: 10.0, platformName: ANDROID, sauce:options: {accessKey: 49d13ae3-a890-47ed-813b-6ab..., appiumVersion: 1.22.2, build: Calculadora Google - Teste ..., deviceOrientation: portrait, name: Testes de Soma com Page Obj..., username: oauth-danillo-75a98}}}]
+Capabilities {app: storage:filename=Calculator..., appium:automationName: UiAutomator2, appium:deviceName: Google Pixel 3 GoogleAPI Em..., appium:platformVersion: 10.0, platformName: ANDROID, sauce:options: {accessKey: 49d13ae3-a890-47ed-813b-6ab..., appiumVersion: 1.22.2, build: Calculadora Google - Teste ..., deviceOrientation: portrait, name: Testes de Soma com Page Obj..., username: oauth-danillo-75a98}}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 400. Message: No browserName or app specified in session request. Please check our platforms configurator (https://wiki.saucelabs.com/display/DOCS/Platform+Configurator): {'sauce:options': {'username': 'oauth-danillo-75a98', 'name': 'Testes de Soma com Page Objects e CSV', 'app': 'storage:filename=Calculator_8.4 (503542421)_Apkpure.apk', 'appiumVersion': '1.22.2', 'deviceOrientation': 'portrait', 'accessKey': 'XXXXXXXX-XXXX-XXXX-XXXX-XXXX262151c7', 'build': 'Calculadora Google - Teste Mobile v1.0'}, 'appium:deviceName': 'Google Pixel 3 GoogleAPI Emulator', 'appium:automationName': 'UiAutomator2', 'platformName': 'ANDROID', 'appium:platformVersion': '9.0'} 
+              <![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 404. Message: Appium 1.22.2 does not support ANDROID 10.0. Please check our platform configurator (https://saucelabs.com/products/platform-configurator) 
 Host info: host: 'danillo', ip: '192.168.15.23'
 Build info: version: '4.13.0', revision: 'ba948ece5b*'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.14.0-33-generic', java.version: '17.0.9'
 Driver info: io.appium.java_client.android.AndroidDriver
-Command: [null, newSession {capabilities=[{appium:automationName=UiAutomator2, appium:deviceName=Google Pixel 3 GoogleAPI Emulator, appium:platformVersion=9.0, platformName=ANDROID, sauce:options={app=storage:filename=Calculator_8.4 (503542421)_Apkpure.apk, accessKey=49d13ae3-a890-47ed-813b-6ab9262151c7, build=Calculadora Google - Teste Mobile v1.0, appiumVersion=1.22.2, name=Testes de Soma com Page Objects e CSV, deviceOrientation=portrait, username=oauth-danillo-75a98}}], desiredCapabilities=Capabilities {appium:automationName: UiAutomator2, appium:deviceName: Google Pixel 3 GoogleAPI Em..., appium:platformVersion: 9.0, platformName: ANDROID, sauce:options: {accessKey: 49d13ae3-a890-47ed-813b-6ab..., app: storage:filename=Calculator..., appiumVersion: 1.22.2, build: Calculadora Google - Teste ..., deviceOrientation: portrait, name: Testes de Soma com Page Obj..., username: oauth-danillo-75a98}}}]
-Capabilities {appium:automationName: UiAutomator2, appium:deviceName: Google Pixel 3 GoogleAPI Em..., appium:platformVersion: 9.0, platformName: ANDROID, sauce:options: {accessKey: 49d13ae3-a890-47ed-813b-6ab..., app: storage:filename=Calculator..., appiumVersion: 1.22.2, build: Calculadora Google - Teste ..., deviceOrientation: portrait, name: Testes de Soma com Page Obj..., username: oauth-danillo-75a98}}
+Command: [null, newSession {capabilities=[{appium:app=storage:filename=Calculator_8.4 (503542421)_Apkpure.apk, appium:automationName=UiAutomator2, appium:deviceName=Google Pixel 3 GoogleAPI Emulator, appium:platformVersion=10.0, platformName=ANDROID, sauce:options={accessKey=49d13ae3-a890-47ed-813b-6ab9262151c7, build=Calculadora Google - Teste Mobile v1.0, appiumVersion=1.22.2, name=Testes de Soma com Page Objects e CSV, deviceOrientation=portrait, username=oauth-danillo-75a98}}], desiredCapabilities=Capabilities {app: storage:filename=Calculator..., appium:automationName: UiAutomator2, appium:deviceName: Google Pixel 3 GoogleAPI Em..., appium:platformVersion: 10.0, platformName: ANDROID, sauce:options: {accessKey: 49d13ae3-a890-47ed-813b-6ab..., appiumVersion: 1.22.2, build: Calculadora Google - Teste ..., deviceOrientation: portrait, name: Testes de Soma com Page Obj..., username: oauth-danillo-75a98}}}]
+Capabilities {app: storage:filename=Calculator..., appium:automationName: UiAutomator2, appium:deviceName: Google Pixel 3 GoogleAPI Em..., appium:platformVersion: 10.0, platformName: ANDROID, sauce:options: {accessKey: 49d13ae3-a890-47ed-813b-6ab..., appiumVersion: 1.22.2, build: Calculadora Google - Teste ..., deviceOrientation: portrait, name: Testes de Soma com Page Obj..., username: oauth-danillo-75a98}}
 at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:140)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
@@ -119,7 +119,7 @@ at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:163)
 at io.appium.java_client.AppiumDriver.<init>(AppiumDriver.java:89)
 at io.appium.java_client.AppiumDriver.<init>(AppiumDriver.java:101)
 at io.appium.java_client.android.AndroidDriver.<init>(AndroidDriver.java:113)
-at base.BaseTest.setUp(BaseTest.java:38)
+at base.BaseTest.setUp(BaseTest.java:41)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -163,11 +163,15 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testeSomaSimples -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:CalculadoraTest@2928854b]" started-at="2025-10-01T23:02:21 BRT" name="tearDown" finished-at="2025-10-01T23:02:21 BRT" duration-ms="0" status="SKIP">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:CalculadoraTest@2928854b]" started-at="2025-10-01T23:05:06 BRT" name="tearDown" finished-at="2025-10-01T23:05:06 BRT" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method signature="testeSomaComPageObjectsECSV(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:CalculadoraTest@2928854b]" started-at="2025-10-01T23:02:21 BRT" name="testeSomaComPageObjectsECSV" description="5.2 - Testes organizados em Page Objects com dados do CSV" data-provider="dadosCalculadora" finished-at="2025-10-01T23:02:21 BRT" duration-ms="0" status="SKIP">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:CalculadoraTest@2928854b]" started-at="2025-10-01T23:05:06 BRT" name="setUp" finished-at="2025-10-01T23:05:06 BRT" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testeSomaComPageObjectsECSV(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:CalculadoraTest@2928854b]" started-at="2025-10-01T23:05:06 BRT" name="testeSomaComPageObjectsECSV" description="5.2 - Testes organizados em Page Objects com dados do CSV" data-provider="dadosCalculadora" finished-at="2025-10-01T23:05:06 BRT" duration-ms="0" status="SKIP">
           <params>
             <param index="0">
               <value>
@@ -192,22 +196,22 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
           </params>
           <exception class="org.openqa.selenium.SessionNotCreatedException">
             <message>
-              <![CDATA[Could not start a new session. Response code 400. Message: No browserName or app specified in session request. Please check our platforms configurator (https://wiki.saucelabs.com/display/DOCS/Platform+Configurator): {'sauce:options': {'username': 'oauth-danillo-75a98', 'name': 'Testes de Soma com Page Objects e CSV', 'app': 'storage:filename=Calculator_8.4 (503542421)_Apkpure.apk', 'appiumVersion': '1.22.2', 'deviceOrientation': 'portrait', 'accessKey': 'XXXXXXXX-XXXX-XXXX-XXXX-XXXX262151c7', 'build': 'Calculadora Google - Teste Mobile v1.0'}, 'appium:deviceName': 'Google Pixel 3 GoogleAPI Emulator', 'appium:automationName': 'UiAutomator2', 'platformName': 'ANDROID', 'appium:platformVersion': '9.0'} 
+              <![CDATA[Could not start a new session. Response code 404. Message: Appium 1.22.2 does not support ANDROID 10.0. Please check our platform configurator (https://saucelabs.com/products/platform-configurator) 
 Host info: host: 'danillo', ip: '192.168.15.23'
 Build info: version: '4.13.0', revision: 'ba948ece5b*'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.14.0-33-generic', java.version: '17.0.9'
 Driver info: io.appium.java_client.android.AndroidDriver
-Command: [null, newSession {capabilities=[{appium:automationName=UiAutomator2, appium:deviceName=Google Pixel 3 GoogleAPI Emulator, appium:platformVersion=9.0, platformName=ANDROID, sauce:options={app=storage:filename=Calculator_8.4 (503542421)_Apkpure.apk, accessKey=49d13ae3-a890-47ed-813b-6ab9262151c7, build=Calculadora Google - Teste Mobile v1.0, appiumVersion=1.22.2, name=Testes de Soma com Page Objects e CSV, deviceOrientation=portrait, username=oauth-danillo-75a98}}], desiredCapabilities=Capabilities {appium:automationName: UiAutomator2, appium:deviceName: Google Pixel 3 GoogleAPI Em..., appium:platformVersion: 9.0, platformName: ANDROID, sauce:options: {accessKey: 49d13ae3-a890-47ed-813b-6ab..., app: storage:filename=Calculator..., appiumVersion: 1.22.2, build: Calculadora Google - Teste ..., deviceOrientation: portrait, name: Testes de Soma com Page Obj..., username: oauth-danillo-75a98}}}]
-Capabilities {appium:automationName: UiAutomator2, appium:deviceName: Google Pixel 3 GoogleAPI Em..., appium:platformVersion: 9.0, platformName: ANDROID, sauce:options: {accessKey: 49d13ae3-a890-47ed-813b-6ab..., app: storage:filename=Calculator..., appiumVersion: 1.22.2, build: Calculadora Google - Teste ..., deviceOrientation: portrait, name: Testes de Soma com Page Obj..., username: oauth-danillo-75a98}}]]>
+Command: [null, newSession {capabilities=[{appium:app=storage:filename=Calculator_8.4 (503542421)_Apkpure.apk, appium:automationName=UiAutomator2, appium:deviceName=Google Pixel 3 GoogleAPI Emulator, appium:platformVersion=10.0, platformName=ANDROID, sauce:options={accessKey=49d13ae3-a890-47ed-813b-6ab9262151c7, build=Calculadora Google - Teste Mobile v1.0, appiumVersion=1.22.2, name=Testes de Soma com Page Objects e CSV, deviceOrientation=portrait, username=oauth-danillo-75a98}}], desiredCapabilities=Capabilities {app: storage:filename=Calculator..., appium:automationName: UiAutomator2, appium:deviceName: Google Pixel 3 GoogleAPI Em..., appium:platformVersion: 10.0, platformName: ANDROID, sauce:options: {accessKey: 49d13ae3-a890-47ed-813b-6ab..., appiumVersion: 1.22.2, build: Calculadora Google - Teste ..., deviceOrientation: portrait, name: Testes de Soma com Page Obj..., username: oauth-danillo-75a98}}}]
+Capabilities {app: storage:filename=Calculator..., appium:automationName: UiAutomator2, appium:deviceName: Google Pixel 3 GoogleAPI Em..., appium:platformVersion: 10.0, platformName: ANDROID, sauce:options: {accessKey: 49d13ae3-a890-47ed-813b-6ab..., appiumVersion: 1.22.2, build: Calculadora Google - Teste ..., deviceOrientation: portrait, name: Testes de Soma com Page Obj..., username: oauth-danillo-75a98}}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 400. Message: No browserName or app specified in session request. Please check our platforms configurator (https://wiki.saucelabs.com/display/DOCS/Platform+Configurator): {'sauce:options': {'username': 'oauth-danillo-75a98', 'name': 'Testes de Soma com Page Objects e CSV', 'app': 'storage:filename=Calculator_8.4 (503542421)_Apkpure.apk', 'appiumVersion': '1.22.2', 'deviceOrientation': 'portrait', 'accessKey': 'XXXXXXXX-XXXX-XXXX-XXXX-XXXX262151c7', 'build': 'Calculadora Google - Teste Mobile v1.0'}, 'appium:deviceName': 'Google Pixel 3 GoogleAPI Emulator', 'appium:automationName': 'UiAutomator2', 'platformName': 'ANDROID', 'appium:platformVersion': '9.0'} 
+              <![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 404. Message: Appium 1.22.2 does not support ANDROID 10.0. Please check our platform configurator (https://saucelabs.com/products/platform-configurator) 
 Host info: host: 'danillo', ip: '192.168.15.23'
 Build info: version: '4.13.0', revision: 'ba948ece5b*'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.14.0-33-generic', java.version: '17.0.9'
 Driver info: io.appium.java_client.android.AndroidDriver
-Command: [null, newSession {capabilities=[{appium:automationName=UiAutomator2, appium:deviceName=Google Pixel 3 GoogleAPI Emulator, appium:platformVersion=9.0, platformName=ANDROID, sauce:options={app=storage:filename=Calculator_8.4 (503542421)_Apkpure.apk, accessKey=49d13ae3-a890-47ed-813b-6ab9262151c7, build=Calculadora Google - Teste Mobile v1.0, appiumVersion=1.22.2, name=Testes de Soma com Page Objects e CSV, deviceOrientation=portrait, username=oauth-danillo-75a98}}], desiredCapabilities=Capabilities {appium:automationName: UiAutomator2, appium:deviceName: Google Pixel 3 GoogleAPI Em..., appium:platformVersion: 9.0, platformName: ANDROID, sauce:options: {accessKey: 49d13ae3-a890-47ed-813b-6ab..., app: storage:filename=Calculator..., appiumVersion: 1.22.2, build: Calculadora Google - Teste ..., deviceOrientation: portrait, name: Testes de Soma com Page Obj..., username: oauth-danillo-75a98}}}]
-Capabilities {appium:automationName: UiAutomator2, appium:deviceName: Google Pixel 3 GoogleAPI Em..., appium:platformVersion: 9.0, platformName: ANDROID, sauce:options: {accessKey: 49d13ae3-a890-47ed-813b-6ab..., app: storage:filename=Calculator..., appiumVersion: 1.22.2, build: Calculadora Google - Teste ..., deviceOrientation: portrait, name: Testes de Soma com Page Obj..., username: oauth-danillo-75a98}}
+Command: [null, newSession {capabilities=[{appium:app=storage:filename=Calculator_8.4 (503542421)_Apkpure.apk, appium:automationName=UiAutomator2, appium:deviceName=Google Pixel 3 GoogleAPI Emulator, appium:platformVersion=10.0, platformName=ANDROID, sauce:options={accessKey=49d13ae3-a890-47ed-813b-6ab9262151c7, build=Calculadora Google - Teste Mobile v1.0, appiumVersion=1.22.2, name=Testes de Soma com Page Objects e CSV, deviceOrientation=portrait, username=oauth-danillo-75a98}}], desiredCapabilities=Capabilities {app: storage:filename=Calculator..., appium:automationName: UiAutomator2, appium:deviceName: Google Pixel 3 GoogleAPI Em..., appium:platformVersion: 10.0, platformName: ANDROID, sauce:options: {accessKey: 49d13ae3-a890-47ed-813b-6ab..., appiumVersion: 1.22.2, build: Calculadora Google - Teste ..., deviceOrientation: portrait, name: Testes de Soma com Page Obj..., username: oauth-danillo-75a98}}}]
+Capabilities {app: storage:filename=Calculator..., appium:automationName: UiAutomator2, appium:deviceName: Google Pixel 3 GoogleAPI Em..., appium:platformVersion: 10.0, platformName: ANDROID, sauce:options: {accessKey: 49d13ae3-a890-47ed-813b-6ab..., appiumVersion: 1.22.2, build: Calculadora Google - Teste ..., deviceOrientation: portrait, name: Testes de Soma com Page Obj..., username: oauth-danillo-75a98}}
 at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:140)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
@@ -223,7 +227,7 @@ at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:163)
 at io.appium.java_client.AppiumDriver.<init>(AppiumDriver.java:89)
 at io.appium.java_client.AppiumDriver.<init>(AppiumDriver.java:101)
 at io.appium.java_client.android.AndroidDriver.<init>(AndroidDriver.java:113)
-at base.BaseTest.setUp(BaseTest.java:38)
+at base.BaseTest.setUp(BaseTest.java:41)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -267,15 +271,11 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testeSomaComPageObjectsECSV -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:CalculadoraTest@2928854b]" started-at="2025-10-01T23:02:21 BRT" name="setUp" finished-at="2025-10-01T23:02:21 BRT" duration-ms="0" status="SKIP">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:CalculadoraTest@2928854b]" started-at="2025-10-01T23:02:21 BRT" name="tearDown" finished-at="2025-10-01T23:02:21 BRT" duration-ms="0" status="SKIP">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:CalculadoraTest@2928854b]" started-at="2025-10-01T23:05:06 BRT" name="tearDown" finished-at="2025-10-01T23:05:06 BRT" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method signature="testeSomaComPageObjectsECSV(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:CalculadoraTest@2928854b]" started-at="2025-10-01T23:02:21 BRT" name="testeSomaComPageObjectsECSV" description="5.2 - Testes organizados em Page Objects com dados do CSV" data-provider="dadosCalculadora" finished-at="2025-10-01T23:02:21 BRT" duration-ms="0" status="SKIP">
+        <test-method signature="testeSomaComPageObjectsECSV(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:CalculadoraTest@2928854b]" started-at="2025-10-01T23:05:06 BRT" name="testeSomaComPageObjectsECSV" description="5.2 - Testes organizados em Page Objects com dados do CSV" data-provider="dadosCalculadora" finished-at="2025-10-01T23:05:06 BRT" duration-ms="0" status="SKIP">
           <params>
             <param index="0">
               <value>
@@ -300,22 +300,22 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
           </params>
           <exception class="org.openqa.selenium.SessionNotCreatedException">
             <message>
-              <![CDATA[Could not start a new session. Response code 400. Message: No browserName or app specified in session request. Please check our platforms configurator (https://wiki.saucelabs.com/display/DOCS/Platform+Configurator): {'sauce:options': {'username': 'oauth-danillo-75a98', 'name': 'Testes de Soma com Page Objects e CSV', 'app': 'storage:filename=Calculator_8.4 (503542421)_Apkpure.apk', 'appiumVersion': '1.22.2', 'deviceOrientation': 'portrait', 'accessKey': 'XXXXXXXX-XXXX-XXXX-XXXX-XXXX262151c7', 'build': 'Calculadora Google - Teste Mobile v1.0'}, 'appium:deviceName': 'Google Pixel 3 GoogleAPI Emulator', 'appium:automationName': 'UiAutomator2', 'platformName': 'ANDROID', 'appium:platformVersion': '9.0'} 
+              <![CDATA[Could not start a new session. Response code 404. Message: Appium 1.22.2 does not support ANDROID 10.0. Please check our platform configurator (https://saucelabs.com/products/platform-configurator) 
 Host info: host: 'danillo', ip: '192.168.15.23'
 Build info: version: '4.13.0', revision: 'ba948ece5b*'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.14.0-33-generic', java.version: '17.0.9'
 Driver info: io.appium.java_client.android.AndroidDriver
-Command: [null, newSession {capabilities=[{appium:automationName=UiAutomator2, appium:deviceName=Google Pixel 3 GoogleAPI Emulator, appium:platformVersion=9.0, platformName=ANDROID, sauce:options={app=storage:filename=Calculator_8.4 (503542421)_Apkpure.apk, accessKey=49d13ae3-a890-47ed-813b-6ab9262151c7, build=Calculadora Google - Teste Mobile v1.0, appiumVersion=1.22.2, name=Testes de Soma com Page Objects e CSV, deviceOrientation=portrait, username=oauth-danillo-75a98}}], desiredCapabilities=Capabilities {appium:automationName: UiAutomator2, appium:deviceName: Google Pixel 3 GoogleAPI Em..., appium:platformVersion: 9.0, platformName: ANDROID, sauce:options: {accessKey: 49d13ae3-a890-47ed-813b-6ab..., app: storage:filename=Calculator..., appiumVersion: 1.22.2, build: Calculadora Google - Teste ..., deviceOrientation: portrait, name: Testes de Soma com Page Obj..., username: oauth-danillo-75a98}}}]
-Capabilities {appium:automationName: UiAutomator2, appium:deviceName: Google Pixel 3 GoogleAPI Em..., appium:platformVersion: 9.0, platformName: ANDROID, sauce:options: {accessKey: 49d13ae3-a890-47ed-813b-6ab..., app: storage:filename=Calculator..., appiumVersion: 1.22.2, build: Calculadora Google - Teste ..., deviceOrientation: portrait, name: Testes de Soma com Page Obj..., username: oauth-danillo-75a98}}]]>
+Command: [null, newSession {capabilities=[{appium:app=storage:filename=Calculator_8.4 (503542421)_Apkpure.apk, appium:automationName=UiAutomator2, appium:deviceName=Google Pixel 3 GoogleAPI Emulator, appium:platformVersion=10.0, platformName=ANDROID, sauce:options={accessKey=49d13ae3-a890-47ed-813b-6ab9262151c7, build=Calculadora Google - Teste Mobile v1.0, appiumVersion=1.22.2, name=Testes de Soma com Page Objects e CSV, deviceOrientation=portrait, username=oauth-danillo-75a98}}], desiredCapabilities=Capabilities {app: storage:filename=Calculator..., appium:automationName: UiAutomator2, appium:deviceName: Google Pixel 3 GoogleAPI Em..., appium:platformVersion: 10.0, platformName: ANDROID, sauce:options: {accessKey: 49d13ae3-a890-47ed-813b-6ab..., appiumVersion: 1.22.2, build: Calculadora Google - Teste ..., deviceOrientation: portrait, name: Testes de Soma com Page Obj..., username: oauth-danillo-75a98}}}]
+Capabilities {app: storage:filename=Calculator..., appium:automationName: UiAutomator2, appium:deviceName: Google Pixel 3 GoogleAPI Em..., appium:platformVersion: 10.0, platformName: ANDROID, sauce:options: {accessKey: 49d13ae3-a890-47ed-813b-6ab..., appiumVersion: 1.22.2, build: Calculadora Google - Teste ..., deviceOrientation: portrait, name: Testes de Soma com Page Obj..., username: oauth-danillo-75a98}}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 400. Message: No browserName or app specified in session request. Please check our platforms configurator (https://wiki.saucelabs.com/display/DOCS/Platform+Configurator): {'sauce:options': {'username': 'oauth-danillo-75a98', 'name': 'Testes de Soma com Page Objects e CSV', 'app': 'storage:filename=Calculator_8.4 (503542421)_Apkpure.apk', 'appiumVersion': '1.22.2', 'deviceOrientation': 'portrait', 'accessKey': 'XXXXXXXX-XXXX-XXXX-XXXX-XXXX262151c7', 'build': 'Calculadora Google - Teste Mobile v1.0'}, 'appium:deviceName': 'Google Pixel 3 GoogleAPI Emulator', 'appium:automationName': 'UiAutomator2', 'platformName': 'ANDROID', 'appium:platformVersion': '9.0'} 
+              <![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 404. Message: Appium 1.22.2 does not support ANDROID 10.0. Please check our platform configurator (https://saucelabs.com/products/platform-configurator) 
 Host info: host: 'danillo', ip: '192.168.15.23'
 Build info: version: '4.13.0', revision: 'ba948ece5b*'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.14.0-33-generic', java.version: '17.0.9'
 Driver info: io.appium.java_client.android.AndroidDriver
-Command: [null, newSession {capabilities=[{appium:automationName=UiAutomator2, appium:deviceName=Google Pixel 3 GoogleAPI Emulator, appium:platformVersion=9.0, platformName=ANDROID, sauce:options={app=storage:filename=Calculator_8.4 (503542421)_Apkpure.apk, accessKey=49d13ae3-a890-47ed-813b-6ab9262151c7, build=Calculadora Google - Teste Mobile v1.0, appiumVersion=1.22.2, name=Testes de Soma com Page Objects e CSV, deviceOrientation=portrait, username=oauth-danillo-75a98}}], desiredCapabilities=Capabilities {appium:automationName: UiAutomator2, appium:deviceName: Google Pixel 3 GoogleAPI Em..., appium:platformVersion: 9.0, platformName: ANDROID, sauce:options: {accessKey: 49d13ae3-a890-47ed-813b-6ab..., app: storage:filename=Calculator..., appiumVersion: 1.22.2, build: Calculadora Google - Teste ..., deviceOrientation: portrait, name: Testes de Soma com Page Obj..., username: oauth-danillo-75a98}}}]
-Capabilities {appium:automationName: UiAutomator2, appium:deviceName: Google Pixel 3 GoogleAPI Em..., appium:platformVersion: 9.0, platformName: ANDROID, sauce:options: {accessKey: 49d13ae3-a890-47ed-813b-6ab..., app: storage:filename=Calculator..., appiumVersion: 1.22.2, build: Calculadora Google - Teste ..., deviceOrientation: portrait, name: Testes de Soma com Page Obj..., username: oauth-danillo-75a98}}
+Command: [null, newSession {capabilities=[{appium:app=storage:filename=Calculator_8.4 (503542421)_Apkpure.apk, appium:automationName=UiAutomator2, appium:deviceName=Google Pixel 3 GoogleAPI Emulator, appium:platformVersion=10.0, platformName=ANDROID, sauce:options={accessKey=49d13ae3-a890-47ed-813b-6ab9262151c7, build=Calculadora Google - Teste Mobile v1.0, appiumVersion=1.22.2, name=Testes de Soma com Page Objects e CSV, deviceOrientation=portrait, username=oauth-danillo-75a98}}], desiredCapabilities=Capabilities {app: storage:filename=Calculator..., appium:automationName: UiAutomator2, appium:deviceName: Google Pixel 3 GoogleAPI Em..., appium:platformVersion: 10.0, platformName: ANDROID, sauce:options: {accessKey: 49d13ae3-a890-47ed-813b-6ab..., appiumVersion: 1.22.2, build: Calculadora Google - Teste ..., deviceOrientation: portrait, name: Testes de Soma com Page Obj..., username: oauth-danillo-75a98}}}]
+Capabilities {app: storage:filename=Calculator..., appium:automationName: UiAutomator2, appium:deviceName: Google Pixel 3 GoogleAPI Em..., appium:platformVersion: 10.0, platformName: ANDROID, sauce:options: {accessKey: 49d13ae3-a890-47ed-813b-6ab..., appiumVersion: 1.22.2, build: Calculadora Google - Teste ..., deviceOrientation: portrait, name: Testes de Soma com Page Obj..., username: oauth-danillo-75a98}}
 at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:140)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
@@ -331,7 +331,7 @@ at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:163)
 at io.appium.java_client.AppiumDriver.<init>(AppiumDriver.java:89)
 at io.appium.java_client.AppiumDriver.<init>(AppiumDriver.java:101)
 at io.appium.java_client.android.AndroidDriver.<init>(AndroidDriver.java:113)
-at base.BaseTest.setUp(BaseTest.java:38)
+at base.BaseTest.setUp(BaseTest.java:41)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -375,15 +375,19 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testeSomaComPageObjectsECSV -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:CalculadoraTest@2928854b]" started-at="2025-10-01T23:02:21 BRT" name="setUp" finished-at="2025-10-01T23:02:21 BRT" duration-ms="0" status="SKIP">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:CalculadoraTest@2928854b]" started-at="2025-10-01T23:05:06 BRT" name="setUp" finished-at="2025-10-01T23:05:06 BRT" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:CalculadoraTest@2928854b]" started-at="2025-10-01T23:02:21 BRT" name="tearDown" finished-at="2025-10-01T23:02:21 BRT" duration-ms="0" status="SKIP">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:CalculadoraTest@2928854b]" started-at="2025-10-01T23:05:06 BRT" name="tearDown" finished-at="2025-10-01T23:05:06 BRT" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method signature="testeSomaComPageObjectsECSV(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:CalculadoraTest@2928854b]" started-at="2025-10-01T23:02:21 BRT" name="testeSomaComPageObjectsECSV" description="5.2 - Testes organizados em Page Objects com dados do CSV" data-provider="dadosCalculadora" finished-at="2025-10-01T23:02:21 BRT" duration-ms="0" status="SKIP">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:CalculadoraTest@2928854b]" started-at="2025-10-01T23:05:06 BRT" name="setUp" finished-at="2025-10-01T23:05:06 BRT" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testeSomaComPageObjectsECSV(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:CalculadoraTest@2928854b]" started-at="2025-10-01T23:05:06 BRT" name="testeSomaComPageObjectsECSV" description="5.2 - Testes organizados em Page Objects com dados do CSV" data-provider="dadosCalculadora" finished-at="2025-10-01T23:05:06 BRT" duration-ms="0" status="SKIP">
           <params>
             <param index="0">
               <value>
@@ -408,22 +412,22 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
           </params>
           <exception class="org.openqa.selenium.SessionNotCreatedException">
             <message>
-              <![CDATA[Could not start a new session. Response code 400. Message: No browserName or app specified in session request. Please check our platforms configurator (https://wiki.saucelabs.com/display/DOCS/Platform+Configurator): {'sauce:options': {'username': 'oauth-danillo-75a98', 'name': 'Testes de Soma com Page Objects e CSV', 'app': 'storage:filename=Calculator_8.4 (503542421)_Apkpure.apk', 'appiumVersion': '1.22.2', 'deviceOrientation': 'portrait', 'accessKey': 'XXXXXXXX-XXXX-XXXX-XXXX-XXXX262151c7', 'build': 'Calculadora Google - Teste Mobile v1.0'}, 'appium:deviceName': 'Google Pixel 3 GoogleAPI Emulator', 'appium:automationName': 'UiAutomator2', 'platformName': 'ANDROID', 'appium:platformVersion': '9.0'} 
+              <![CDATA[Could not start a new session. Response code 404. Message: Appium 1.22.2 does not support ANDROID 10.0. Please check our platform configurator (https://saucelabs.com/products/platform-configurator) 
 Host info: host: 'danillo', ip: '192.168.15.23'
 Build info: version: '4.13.0', revision: 'ba948ece5b*'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.14.0-33-generic', java.version: '17.0.9'
 Driver info: io.appium.java_client.android.AndroidDriver
-Command: [null, newSession {capabilities=[{appium:automationName=UiAutomator2, appium:deviceName=Google Pixel 3 GoogleAPI Emulator, appium:platformVersion=9.0, platformName=ANDROID, sauce:options={app=storage:filename=Calculator_8.4 (503542421)_Apkpure.apk, accessKey=49d13ae3-a890-47ed-813b-6ab9262151c7, build=Calculadora Google - Teste Mobile v1.0, appiumVersion=1.22.2, name=Testes de Soma com Page Objects e CSV, deviceOrientation=portrait, username=oauth-danillo-75a98}}], desiredCapabilities=Capabilities {appium:automationName: UiAutomator2, appium:deviceName: Google Pixel 3 GoogleAPI Em..., appium:platformVersion: 9.0, platformName: ANDROID, sauce:options: {accessKey: 49d13ae3-a890-47ed-813b-6ab..., app: storage:filename=Calculator..., appiumVersion: 1.22.2, build: Calculadora Google - Teste ..., deviceOrientation: portrait, name: Testes de Soma com Page Obj..., username: oauth-danillo-75a98}}}]
-Capabilities {appium:automationName: UiAutomator2, appium:deviceName: Google Pixel 3 GoogleAPI Em..., appium:platformVersion: 9.0, platformName: ANDROID, sauce:options: {accessKey: 49d13ae3-a890-47ed-813b-6ab..., app: storage:filename=Calculator..., appiumVersion: 1.22.2, build: Calculadora Google - Teste ..., deviceOrientation: portrait, name: Testes de Soma com Page Obj..., username: oauth-danillo-75a98}}]]>
+Command: [null, newSession {capabilities=[{appium:app=storage:filename=Calculator_8.4 (503542421)_Apkpure.apk, appium:automationName=UiAutomator2, appium:deviceName=Google Pixel 3 GoogleAPI Emulator, appium:platformVersion=10.0, platformName=ANDROID, sauce:options={accessKey=49d13ae3-a890-47ed-813b-6ab9262151c7, build=Calculadora Google - Teste Mobile v1.0, appiumVersion=1.22.2, name=Testes de Soma com Page Objects e CSV, deviceOrientation=portrait, username=oauth-danillo-75a98}}], desiredCapabilities=Capabilities {app: storage:filename=Calculator..., appium:automationName: UiAutomator2, appium:deviceName: Google Pixel 3 GoogleAPI Em..., appium:platformVersion: 10.0, platformName: ANDROID, sauce:options: {accessKey: 49d13ae3-a890-47ed-813b-6ab..., appiumVersion: 1.22.2, build: Calculadora Google - Teste ..., deviceOrientation: portrait, name: Testes de Soma com Page Obj..., username: oauth-danillo-75a98}}}]
+Capabilities {app: storage:filename=Calculator..., appium:automationName: UiAutomator2, appium:deviceName: Google Pixel 3 GoogleAPI Em..., appium:platformVersion: 10.0, platformName: ANDROID, sauce:options: {accessKey: 49d13ae3-a890-47ed-813b-6ab..., appiumVersion: 1.22.2, build: Calculadora Google - Teste ..., deviceOrientation: portrait, name: Testes de Soma com Page Obj..., username: oauth-danillo-75a98}}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 400. Message: No browserName or app specified in session request. Please check our platforms configurator (https://wiki.saucelabs.com/display/DOCS/Platform+Configurator): {'sauce:options': {'username': 'oauth-danillo-75a98', 'name': 'Testes de Soma com Page Objects e CSV', 'app': 'storage:filename=Calculator_8.4 (503542421)_Apkpure.apk', 'appiumVersion': '1.22.2', 'deviceOrientation': 'portrait', 'accessKey': 'XXXXXXXX-XXXX-XXXX-XXXX-XXXX262151c7', 'build': 'Calculadora Google - Teste Mobile v1.0'}, 'appium:deviceName': 'Google Pixel 3 GoogleAPI Emulator', 'appium:automationName': 'UiAutomator2', 'platformName': 'ANDROID', 'appium:platformVersion': '9.0'} 
+              <![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 404. Message: Appium 1.22.2 does not support ANDROID 10.0. Please check our platform configurator (https://saucelabs.com/products/platform-configurator) 
 Host info: host: 'danillo', ip: '192.168.15.23'
 Build info: version: '4.13.0', revision: 'ba948ece5b*'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.14.0-33-generic', java.version: '17.0.9'
 Driver info: io.appium.java_client.android.AndroidDriver
-Command: [null, newSession {capabilities=[{appium:automationName=UiAutomator2, appium:deviceName=Google Pixel 3 GoogleAPI Emulator, appium:platformVersion=9.0, platformName=ANDROID, sauce:options={app=storage:filename=Calculator_8.4 (503542421)_Apkpure.apk, accessKey=49d13ae3-a890-47ed-813b-6ab9262151c7, build=Calculadora Google - Teste Mobile v1.0, appiumVersion=1.22.2, name=Testes de Soma com Page Objects e CSV, deviceOrientation=portrait, username=oauth-danillo-75a98}}], desiredCapabilities=Capabilities {appium:automationName: UiAutomator2, appium:deviceName: Google Pixel 3 GoogleAPI Em..., appium:platformVersion: 9.0, platformName: ANDROID, sauce:options: {accessKey: 49d13ae3-a890-47ed-813b-6ab..., app: storage:filename=Calculator..., appiumVersion: 1.22.2, build: Calculadora Google - Teste ..., deviceOrientation: portrait, name: Testes de Soma com Page Obj..., username: oauth-danillo-75a98}}}]
-Capabilities {appium:automationName: UiAutomator2, appium:deviceName: Google Pixel 3 GoogleAPI Em..., appium:platformVersion: 9.0, platformName: ANDROID, sauce:options: {accessKey: 49d13ae3-a890-47ed-813b-6ab..., app: storage:filename=Calculator..., appiumVersion: 1.22.2, build: Calculadora Google - Teste ..., deviceOrientation: portrait, name: Testes de Soma com Page Obj..., username: oauth-danillo-75a98}}
+Command: [null, newSession {capabilities=[{appium:app=storage:filename=Calculator_8.4 (503542421)_Apkpure.apk, appium:automationName=UiAutomator2, appium:deviceName=Google Pixel 3 GoogleAPI Emulator, appium:platformVersion=10.0, platformName=ANDROID, sauce:options={accessKey=49d13ae3-a890-47ed-813b-6ab9262151c7, build=Calculadora Google - Teste Mobile v1.0, appiumVersion=1.22.2, name=Testes de Soma com Page Objects e CSV, deviceOrientation=portrait, username=oauth-danillo-75a98}}], desiredCapabilities=Capabilities {app: storage:filename=Calculator..., appium:automationName: UiAutomator2, appium:deviceName: Google Pixel 3 GoogleAPI Em..., appium:platformVersion: 10.0, platformName: ANDROID, sauce:options: {accessKey: 49d13ae3-a890-47ed-813b-6ab..., appiumVersion: 1.22.2, build: Calculadora Google - Teste ..., deviceOrientation: portrait, name: Testes de Soma com Page Obj..., username: oauth-danillo-75a98}}}]
+Capabilities {app: storage:filename=Calculator..., appium:automationName: UiAutomator2, appium:deviceName: Google Pixel 3 GoogleAPI Em..., appium:platformVersion: 10.0, platformName: ANDROID, sauce:options: {accessKey: 49d13ae3-a890-47ed-813b-6ab..., appiumVersion: 1.22.2, build: Calculadora Google - Teste ..., deviceOrientation: portrait, name: Testes de Soma com Page Obj..., username: oauth-danillo-75a98}}
 at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:140)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
@@ -439,7 +443,7 @@ at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:163)
 at io.appium.java_client.AppiumDriver.<init>(AppiumDriver.java:89)
 at io.appium.java_client.AppiumDriver.<init>(AppiumDriver.java:101)
 at io.appium.java_client.android.AndroidDriver.<init>(AndroidDriver.java:113)
-at base.BaseTest.setUp(BaseTest.java:38)
+at base.BaseTest.setUp(BaseTest.java:41)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -483,14 +487,10 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testeSomaComPageObjectsECSV -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:CalculadoraTest@2928854b]" started-at="2025-10-01T23:02:21 BRT" name="tearDown" finished-at="2025-10-01T23:02:21 BRT" duration-ms="0" status="SKIP">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:CalculadoraTest@2928854b]" started-at="2025-10-01T23:05:06 BRT" name="tearDown" finished-at="2025-10-01T23:05:06 BRT" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:CalculadoraTest@2928854b]" started-at="2025-10-01T23:02:21 BRT" name="setUp" finished-at="2025-10-01T23:02:21 BRT" duration-ms="0" status="SKIP">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
       </class> <!-- CalculadoraTest -->
     </test> <!-- Surefire test -->
   </suite> <!-- Surefire suite -->
