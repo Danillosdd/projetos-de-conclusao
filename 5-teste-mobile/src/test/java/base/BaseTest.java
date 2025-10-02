@@ -25,14 +25,14 @@ public class BaseTest {
         
         DesiredCapabilities caps = new DesiredCapabilities();
         
-        // Configuração compatível: Android 10 + Appium 1.22.2
+        // ✅ CORREÇÃO: Configuração baseada no projeto calculadora142 que funciona
         caps.setCapability("platformName", "Android");
-        caps.setCapability("appium:platformVersion", "10.0");
-        caps.setCapability("appium:deviceName", "Google Pixel 3 GoogleAPI Emulator");
+        caps.setCapability("appium:platformVersion", "9.0");  // Volta para 9.0
+        caps.setCapability("appium:deviceName", "Google Pixel 3 GoogleAPI Emulator");  // Nome válido
         caps.setCapability("appium:automationName", "UiAutomator2");
         
         // A capability 'app' DEVE estar no nível raiz
-        caps.setCapability("app", "storage:filename=Calculator_8.4 (503542421)_Apkpure.apk");
+        caps.setCapability("app", "storage:filename=Calculator_8.6.1.apk");
         
         // Configurações específicas do SauceLabs usando baseOptions
         caps.setCapability("sauce:options", getBaseOptions());
@@ -51,7 +51,8 @@ public class BaseTest {
         baseOptions.put("build", "Calculadora Google - Teste Mobile v1.0");
         baseOptions.put("name", "Testes de Soma com Page Objects e CSV");
         baseOptions.put("deviceOrientation", "portrait");
-        baseOptions.put("appiumVersion", "1.22.2");
+        // ✅ CORREÇÃO: Usar versão compatível com Android 9.0, sem especificar appiumVersion
+        // baseOptions.put("appiumVersion", "2.0.0");  // Removido - deixar SauceLabs escolher
         return baseOptions;
     }
 

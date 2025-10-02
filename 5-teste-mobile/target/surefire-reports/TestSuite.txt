@@ -1,16 +1,16 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 12, Failures: 1, Errors: 0, Skipped: 11, Time elapsed: 2.211 s <<< FAILURE! - in TestSuite
-CalculadoraTest.setUp  Time elapsed: 2.07 s  <<< FAILURE!
+Tests run: 12, Failures: 1, Errors: 0, Skipped: 11, Time elapsed: 2.793 s <<< FAILURE! - in TestSuite
+CalculadoraTest.setUp  Time elapsed: 2.649 s  <<< FAILURE!
 org.openqa.selenium.SessionNotCreatedException: 
-Could not start a new session. Response code 404. Message: Appium 1.22.2 does not support ANDROID 10.0. Please check our platform configurator (https://saucelabs.com/products/platform-configurator) 
+Could not start a new session. Response code 400. Message: Verification failed for: storage:filename=Calculator_8.4 (503542421)_Apkpure.apk - File is not available. Make sure the file is in App Storage and you have access permissions to it before retrying. If you have confirmed you have access to the file in App Storage and you continue to get this error, contact help@saucelabs.com for support. [Trace: XXXXXXXX-XXXX-XXXX-XXXX-XXXX65319e6f] 
 Host info: host: 'danillo', ip: '192.168.15.23'
 Build info: version: '4.13.0', revision: 'ba948ece5b*'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.14.0-33-generic', java.version: '17.0.9'
 Driver info: io.appium.java_client.android.AndroidDriver
-Command: [null, newSession {capabilities=[{appium:app=storage:filename=Calculator_8.4 (503542421)_Apkpure.apk, appium:automationName=UiAutomator2, appium:deviceName=Google Pixel 3 GoogleAPI Emulator, appium:platformVersion=10.0, platformName=ANDROID, sauce:options={accessKey=49d13ae3-a890-47ed-813b-6ab9262151c7, build=Calculadora Google - Teste Mobile v1.0, appiumVersion=1.22.2, name=Testes de Soma com Page Objects e CSV, deviceOrientation=portrait, username=oauth-danillo-75a98}}], desiredCapabilities=Capabilities {app: storage:filename=Calculator..., appium:automationName: UiAutomator2, appium:deviceName: Google Pixel 3 GoogleAPI Em..., appium:platformVersion: 10.0, platformName: ANDROID, sauce:options: {accessKey: 49d13ae3-a890-47ed-813b-6ab..., appiumVersion: 1.22.2, build: Calculadora Google - Teste ..., deviceOrientation: portrait, name: Testes de Soma com Page Obj..., username: oauth-danillo-75a98}}}]
-Capabilities {app: storage:filename=Calculator..., appium:automationName: UiAutomator2, appium:deviceName: Google Pixel 3 GoogleAPI Em..., appium:platformVersion: 10.0, platformName: ANDROID, sauce:options: {accessKey: 49d13ae3-a890-47ed-813b-6ab..., appiumVersion: 1.22.2, build: Calculadora Google - Teste ..., deviceOrientation: portrait, name: Testes de Soma com Page Obj..., username: oauth-danillo-75a98}}
+Command: [null, newSession {capabilities=[{appium:app=storage:filename=Calculator_8.4 (503542421)_Apkpure.apk, appium:automationName=UiAutomator2, appium:deviceName=Google Pixel 3 GoogleAPI Emulator, appium:platformVersion=9.0, platformName=ANDROID, sauce:options={accessKey=49d13ae3-a890-47ed-813b-6ab9262151c7, build=Calculadora Google - Teste Mobile v1.0, name=Testes de Soma com Page Objects e CSV, deviceOrientation=portrait, username=oauth-danillo-75a98}}], desiredCapabilities=Capabilities {app: storage:filename=Calculator..., appium:automationName: UiAutomator2, appium:deviceName: Google Pixel 3 GoogleAPI Em..., appium:platformVersion: 9.0, platformName: ANDROID, sauce:options: {accessKey: 49d13ae3-a890-47ed-813b-6ab..., build: Calculadora Google - Teste ..., deviceOrientation: portrait, name: Testes de Soma com Page Obj..., username: oauth-danillo-75a98}}}]
+Capabilities {app: storage:filename=Calculator..., appium:automationName: UiAutomator2, appium:deviceName: Google Pixel 3 GoogleAPI Em..., appium:platformVersion: 9.0, platformName: ANDROID, sauce:options: {accessKey: 49d13ae3-a890-47ed-813b-6ab..., build: Calculadora Google - Teste ..., deviceOrientation: portrait, name: Testes de Soma com Page Obj..., username: oauth-danillo-75a98}}
 	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:140)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
