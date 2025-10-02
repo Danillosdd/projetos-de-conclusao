@@ -35,29 +35,30 @@ projetos-de-conclusao/
 │   ├── src/                           # Testes SauceDemo (3 abordagens)
 │   ├── pom.xml                        # Dependências Selenium/Cucumber
 │   └── README.md                      # Documentação específica
-├── 5-teste-mobile/                    # Exercício 5: Testes Mobile
-│   └── [Em desenvolvimento]
 └── README.md                          # Este arquivo
 ```
 
 ## 🧪 Projetos Implementados
 
 ### 1️⃣ Teste Manual e Exploratório
+
 - **Aplicação**: SauceDemo
 - **Foco**: Estratégias de teste manual e exploratório
 - **Técnicas**: Casos de teste, cenários exploratórios, análise heurística
 - **Status**: ✅ Concluído
 
 ### 2️⃣ Teste de Unidade - Calculadora de Volumes
+
 - **Aplicação**: Biblioteca de cálculo de figuras geométricas
 - **Foco**: Testes unitários com JUnit 5
-- **Técnicas**: 
+- **Técnicas**:
   - Testes unitários simples
   - Testes parametrizados com `@CsvSource`
   - Testes orientados por dados com `@CsvFileSource`
 - **Status**: ✅ Concluído (7 testes - 100% sucesso)
 
 ### 3️⃣ Teste de API - Restful Booker
+
 - **Aplicação**: API de reservas de hotel
 - **Foco**: Automação de testes de API REST
 - **Técnicas**:
@@ -68,6 +69,7 @@ projetos-de-conclusao/
 - **Status**: ✅ Concluído (18 testes - 100% sucesso)
 
 ### 4️⃣ Teste Web - SauceDemo
+
 - **Aplicação**: E-commerce SauceDemo
 - **Foco**: Automação web com múltiplas arquiteturas
 - **Técnicas**:
@@ -76,22 +78,19 @@ projetos-de-conclusao/
   - **Page Objects**: Arquitetura escalável e maintível
 - **Status**: ✅ Concluído (5 testes - 100% sucesso)
 
-### 5️⃣ Teste Mobile
-- **Status**: 🚧 Em desenvolvimento
-
 ## 🚀 Como Executar Todos os Projetos
 
 ### Pré-requisitos Globais
 
 - **Java 17** ou superior
-- **Maven 3.6** ou superior
+- **Maven 3.9** ou superior
 - **Google Chrome** (para testes web)
 - **Git** para clone do repositório
 
 ### Clone do Repositório
 
 ```bash
-git clone https://github.com/Danillosdd/projetos-de-conclusao.git
+git clone <url-do-seu-repositorio>
 cd projetos-de-conclusao
 ```
 
@@ -133,12 +132,12 @@ echo "🎉 Todos os testes executados!"
 
 ## 📊 Resultados Consolidados
 
-| Projeto | Testes | Sucesso | Tempo | Cobertura |
-|---------|--------|---------|-------|-----------|
-| **2-teste-de-unidade** | 7 ✅ | 100% | ~2s | Cálculos matemáticos |
-| **3-teste-de-api** | 18 ✅ | 100% | ~11s | CRUD + Autenticação |
-| **4-teste-web** | 5 ✅ | 100% | ~26s | Fluxo E-commerce |
-| **Total** | **30** ✅ | **100%** | **~39s** | **Completa** |
+| Projeto                      | Testes          | Sucesso        | Tempo          | Cobertura              |
+| ---------------------------- | --------------- | -------------- | -------------- | ---------------------- |
+| **2-teste-de-unidade** | 7 ✅            | 100%           | ~2s            | Cálculos matemáticos |
+| **3-teste-de-api**     | 18 ✅           | 100%           | ~11s           | CRUD + Autenticação  |
+| **4-teste-web**        | 5 ✅            | 100%           | ~26s           | Fluxo E-commerce       |
+| **Total**              | **30** ✅ | **100%** | **~39s** | **Completa**     |
 
 ### Estatísticas Detalhadas
 
@@ -151,6 +150,7 @@ echo "🎉 Todos os testes executados!"
 ## 🎓 Conceitos e Técnicas Demonstradas
 
 ### Testes de Unidade
+
 - ✅ Testes unitários com JUnit 5
 - ✅ Testes parametrizados (`@CsvSource`, `@CsvFileSource`)
 - ✅ Data-Driven Testing
@@ -158,6 +158,7 @@ echo "🎉 Todos os testes executados!"
 - ✅ Organização de dados de teste
 
 ### Testes de API
+
 - ✅ Rest-Assured para automação de API
 - ✅ Autenticação com tokens
 - ✅ Serialização/Deserialização JSON
@@ -167,6 +168,7 @@ echo "🎉 Todos os testes executados!"
 - ✅ Hamcrest Matchers
 
 ### Testes Web
+
 - ✅ Selenium WebDriver 4
 - ✅ Page Object Pattern
 - ✅ Behavior-Driven Development (BDD)
@@ -176,6 +178,7 @@ echo "🎉 Todos os testes executados!"
 - ✅ Multiple test architectures
 
 ### Boas Práticas Gerais
+
 - ✅ Clean Code e nomenclatura clara
 - ✅ Separação de responsabilidades
 - ✅ Reutilização de código
@@ -206,15 +209,14 @@ echo "🎉 Todos os testes executados!"
 
 ## 🌐 Aplicações Testadas
 
-| Aplicação | Tipo | URL | Domínio |
-|-----------|------|-----|---------|
-| **Calculadora** | Biblioteca Java | Local | Matemática |
-| **Restful Booker** | API REST | https://restful-booker.herokuapp.com | Reservas |
-| **SauceDemo** | Web App | https://www.saucedemo.com | E-commerce |
+| Aplicação              | Tipo            | URL                                  | Domínio    |
+| ------------------------ | --------------- | ------------------------------------ | ----------- |
+| **Calculadora**    | Biblioteca Java | Local                                | Matemática |
+| **Restful Booker** | API REST        | https://restful-booker.herokuapp.com | Reservas    |
+| **SauceDemo**      | Web App         | https://www.saucedemo.com            | E-commerce  |
 
 ## 📋 Roadmap e Melhorias Futuras
 
-- [ ] **Testes Mobile** - Appium para automação mobile
 - [ ] **Testes de Performance** - JMeter ou Gatling
 - [ ] **CI/CD Pipeline** - GitHub Actions para execução automática
 - [ ] **Relatórios Avançados** - Allure Reports
@@ -225,12 +227,14 @@ echo "🎉 Todos os testes executados!"
 ## 🎯 Aprendizados e Competências Desenvolvidas
 
 ### Técnicas
+
 - Estratégias de automação em múltiplas camadas
 - Padrões de arquitetura para testes maintíveis
 - Integração de ferramentas de teste modernas
 - Técnicas de debugging e troubleshooting
 
 ### Ferramentas
+
 - Domínio completo do ecossistema Java de testes
 - Selenium WebDriver avançado
 - Rest-Assured para APIs
@@ -238,6 +242,7 @@ echo "🎉 Todos os testes executados!"
 - Maven para build management
 
 ### Soft Skills
+
 - Documentação técnica profissional
 - Organização de projetos complexos
 - Nomenclatura consistente e clara
@@ -248,7 +253,6 @@ echo "🎉 Todos os testes executados!"
 **Danillo Silva**
 
 - **GitHub**: [@Danillosdd](https://github.com/Danillosdd)
-- **Projeto**: [projetos-de-conclusao](https://github.com/Danillosdd/projetos-de-conclusao)
 - **LinkedIn**: [@danillosdd](https://www.linkedin.com/in/danillosdd)
 - **Formação**: Teste de Software - Iterasys (2024)
 
@@ -257,8 +261,9 @@ echo "🎉 Todos os testes executados!"
 **Iterasys - Formação em Teste de Software**
 
 Esta formação abrangente cobriu:
+
 - Fundamentos de Teste de Software
-- Estratégias de Teste Manual e Exploratório  
+- Estratégias de Teste Manual e Exploratório
 - Automação de Testes em múltiplas camadas
 - Ferramentas modernas do mercado
 - Boas práticas e padrões da indústria
@@ -273,4 +278,7 @@ Este projeto é parte dos estudos de **Formação em Teste de Software da Iteras
 ---
 
 ### 🎉 **Status Geral**: Formação Concluída com Excelência!
+
 **30 testes automatizados • 100% de sucesso • 4 projetos entregues • Documentação completa**
+
+*Última atualização: Outubro 2025*
