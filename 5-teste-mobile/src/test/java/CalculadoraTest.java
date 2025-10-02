@@ -1,5 +1,4 @@
-//mvn clean test
-//mvn test -Dtest=CalculadoraTest
+package test; // Adicionar declaração de pacote
 
 import java.util.List;
 
