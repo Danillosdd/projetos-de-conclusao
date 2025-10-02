@@ -237,3 +237,18 @@ Este guia fornece pontos-chave para observação durante testes exploratórios n
 ⚠️ **Severidade:**
 [ ] Crítica [ ] Alta [ ] Média [ ] Baixa
 ```
+
+---
+
+## 👨‍💻 Autor
+
+**Danillo Silva**
+
+- GitHub: [@Danillosdd](https://github.com/Danillosdd)
+- Projeto: [projetos-de-conclusao](https://github.com/Danillosdd/projetos-de-conclusao)
+
+## 📄 Licença
+
+Este projeto é parte dos estudos de **Formação em Teste de Software da Iterasys** e demonstra boas práticas em teste exploratório e heurísticas de teste com nomenclatura completamente em português brasileiro.
+
+Todas as heurísticas fornecem orientações práticas para identificação sistemática de problemas durante testes exploratórios no e-commerce SauceDemo.

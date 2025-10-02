@@ -69,3 +69,18 @@
 - Documentar diferenças de comportamento entre browsers
 - Observar console do desenvolvedor para erros JavaScript
 - Verificar responsividade em diferentes resoluções
+
+---
+
+## 👨‍💻 Autor
+
+**Danillo Silva**
+
+- GitHub: [@Danillosdd](https://github.com/Danillosdd)
+- Projeto: [projetos-de-conclusao](https://github.com/Danillosdd/projetos-de-conclusao)
+
+## 📄 Licença
+
+Este projeto é parte dos estudos de **Formação em Teste de Software da Iterasys** e demonstra boas práticas em teste manual e orientado a dados com nomenclatura completamente em português brasileiro.
+
+Todos os casos de teste validam sistematicamente diferentes cenários de login no SauceDemo através de uma abordagem data-driven estruturada.

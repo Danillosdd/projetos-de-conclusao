@@ -123,3 +123,18 @@
 ✅ Mensagens de erro são claras e orientam o usuário
 ✅ Não há quebras visuais ou de layout
 ✅ Dados são persistidos corretamente durante a sessão
+
+---
+
+## 👨‍💻 Autor
+
+**Danillo Silva**
+
+- GitHub: [@Danillosdd](https://github.com/Danillosdd)
+- Projeto: [projetos-de-conclusao](https://github.com/Danillosdd/projetos-de-conclusao)
+
+## 📄 Licença
+
+Este projeto é parte dos estudos de **Formação em Teste de Software da Iterasys** e demonstra boas práticas em critérios de aceitação e especificação por exemplos com nomenclatura completamente em português brasileiro.
+
+Todos os critérios estabelecem expectativas claras e testáveis para o processo de compra completo no SauceDemo através de exemplos práticos e estruturados.
