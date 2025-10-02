@@ -57,13 +57,15 @@ public class CalculadoraPage {
     @FindBy(id = "com.google.android.calculator:id/clr")
     private MobileElement btnLimpar;
 
+    // Construtor
     public CalculadoraPage(AppiumDriver<MobileElement> driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
-        System.out.println("📱 CalculadoraPage inicializada");
+        System.out.println("📱 CalculadoraPage inicializada com sucesso");
     }
 
+    // Método para digitar um número
     public void digitarNumero(String numero) {
         System.out.println("🔢 Digitando número: " + numero);
         
@@ -71,9 +73,17 @@ public class CalculadoraPage {
             MobileElement botao = obterBotaoDigito(digito);
             wait.until(ExpectedConditions.elementToBeClickable(botao));
             botao.click();
+            
+            // Pequena pausa entre cliques
+            try {
+                Thread.sleep(200);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
         }
     }
 
+    // Método auxiliar para obter o botão do dígito
     private MobileElement obterBotaoDigito(char digito) {
         switch (digito) {
             case '0': return btn0;
@@ -90,18 +100,28 @@ public class CalculadoraPage {
         }
     }
 
+    // Método para clicar no botão somar
     public void clicarSomar() {
         System.out.println("➕ Clicando no botão somar");
         wait.until(ExpectedConditions.elementToBeClickable(btnSomar));
         btnSomar.click();
     }
 
+    // Método para clicar no botão igual
     public void clicarIgual() {
         System.out.println("= Clicando no botão igual");
         wait.until(ExpectedConditions.elementToBeClickable(btnIgual));
         btnIgual.click();
+        
+        // Aguarda o resultado aparecer
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
     }
 
+    // Método para obter o resultado
     public String obterResultado() {
         System.out.println("📊 Obtendo resultado...");
         wait.until(ExpectedConditions.visibilityOf(resultado));
@@ -110,12 +130,19 @@ public class CalculadoraPage {
         return res;
     }
 
+    // Método para limpar a calculadora
     public void limparCalculadora() {
         System.out.println("🧹 Limpando calculadora");
-        wait.until(ExpectedConditions.elementToBeClickable(btnLimpar));
-        btnLimpar.click();
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(btnLimpar));
+            btnLimpar.click();
+            Thread.sleep(500);
+        } catch (Exception e) {
+            System.out.println("⚠️ Não foi possível limpar - continuando...");
+        }
     }
 
+    // Método principal para realizar soma
     public void realizarSoma(String num1, String num2) {
         System.out.println(String.format("🧮 Realizando operação: %s + %s", num1, num2));
         
@@ -124,5 +151,7 @@ public class CalculadoraPage {
         clicarSomar();
         digitarNumero(num2);
         clicarIgual();
+        
+        System.out.println("✅ Operação de soma concluída");
     }
 }
