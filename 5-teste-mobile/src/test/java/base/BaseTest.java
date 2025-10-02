@@ -25,21 +25,14 @@ public class BaseTest {
         
         DesiredCapabilities caps = new DesiredCapabilities();
         
-        // Configurações baseadas no repositório que funciona
+        // Configurações baseadas no repositório calculadora142
         caps.setCapability("platformName", "Android");
         caps.setCapability("appium:platformVersion", "9.0");
         caps.setCapability("appium:deviceName", "Google Pixel 3 GoogleAPI Emulator");
         caps.setCapability("appium:automationName", "UiAutomator2");
         
-        // App da calculadora do Google
-        caps.setCapability("browserName", "");
-        caps.setCapability("appium:appPackage", "com.google.android.calculator");
-        caps.setCapability("appium:appActivity", "com.android.calculator2.Calculator");
-        caps.setCapability("appium:noReset", true);
-        caps.setCapability("appium:autoGrantPermissions", true);
-        
-        // Configurações específicas do SauceLabs
-        caps.setCapability("sauce:options", getSauceOptions());
+        // Configurações específicas do SauceLabs usando baseOptions
+        caps.setCapability("sauce:options", getBaseOptions());
         
         System.out.println("📱 Conectando ao SauceLabs...");
         driver = new AndroidDriver(new URL(SAUCE_URL), caps);
@@ -48,15 +41,16 @@ public class BaseTest {
         System.out.println("✅ Conectado ao SauceLabs com sucesso!");
     }
     
-    private Object getSauceOptions() {
-        java.util.Map<String, Object> sauceOptions = new java.util.HashMap<>();
-        sauceOptions.put("username", SAUCE_USERNAME);
-        sauceOptions.put("accessKey", SAUCE_ACCESS_KEY);
-        sauceOptions.put("build", "Calculadora Google - Teste Mobile v1.0");
-        sauceOptions.put("name", "Testes de Soma com Page Objects e CSV");
-        sauceOptions.put("deviceOrientation", "portrait");
-        // Remover appiumVersion para usar a versão padrão estável
-        return sauceOptions;
+    private Object getBaseOptions() {
+        java.util.Map<String, Object> baseOptions = new java.util.HashMap<>();
+        baseOptions.put("username", SAUCE_USERNAME);
+        baseOptions.put("accessKey", SAUCE_ACCESS_KEY);
+        baseOptions.put("build", "Calculadora Google - Teste Mobile v1.0");
+        baseOptions.put("name", "Testes de Soma com Page Objects e CSV");
+        baseOptions.put("deviceOrientation", "portrait");
+        baseOptions.put("appiumVersion", "1.22.2");
+        baseOptions.put("app", "storage:filename=Calculator_8.4 (503542421)_Apkpure.apk");
+        return baseOptions;
     }
 
     @AfterMethod
