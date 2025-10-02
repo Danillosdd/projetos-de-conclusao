@@ -15,8 +15,8 @@ public class BaseTest {
     protected AppiumDriver<MobileElement> driver;
     
     // Configurações do SauceLabs (igual ao seu projeto calculadora142)
-    private static final String SAUCE_USERNAME = "oauth-danillosdd-93c82";
-    private static final String SAUCE_ACCESS_KEY = "42940e59-9c8b-472e-a6b9-a9f81b351788";
+    private static final String SAUCE_USERNAME = "oauth-danillo-75a98";
+    private static final String SAUCE_ACCESS_KEY = "49d13ae3-a890-47ed-813b-6ab9262151c7";
     private static final String SAUCE_URL = "https://ondemand.us-west-1.saucelabs.com/wd/hub";
 
     @BeforeMethod
