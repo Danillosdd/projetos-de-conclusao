@@ -1,6 +1,9 @@
 //mvn clean test
 //mvn test -Dtest=Calculadora
 
+import base.BaseTest;
+import pages.CalculadoraPage;
+import utils.CSVReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Map;
@@ -9,12 +12,14 @@ import org.junit.jupiter.api.AfterEach;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.options.BaseOptions;
 
-public class CalculadoraTest {
+public class CalculadoraTest extends BaseTest {
 
     private AndroidDriver driver;
 
@@ -113,6 +118,47 @@ public class CalculadoraTest {
         // Verifica o resultado
         var resultado = driver.findElement(AppiumBy.id("com.google.android.calculator:id/result_final"));
         assertEquals("5", resultado.getText());
+    }
+
+    @Test(description = "Teste simples de soma: 5 + 3 = 8")
+    public void testeSomaSimples() {
+        CalculadoraPage calculadora = new CalculadoraPage(driver);
+        
+        // Teste simples: 5 + 3 = 8
+        calculadora.realizarSoma("5", "3");
+        
+        String resultado = calculadora.obterResultado();
+        Assert.assertEquals(resultado, "8", "O resultado da soma deve ser 8");
+        
+        System.out.println("✅ Teste simples executado: 5 + 3 = " + resultado);
+    }
+
+    @DataProvider(name = "dadosCalculadora")
+    public Object[][] fornecerDadosCSV() {
+        String caminhoCSV = "src/test/resources/calculos.csv";
+        List<String[]> dados = CSVReader.lerCSV(caminhoCSV);
+        
+        Object[][] dadosArray = new Object[dados.size()][4];
+        for (int i = 0; i < dados.size(); i++) {
+            String[] linha = dados.get(i);
+            dadosArray[i] = new Object[]{linha[0], linha[1], linha[2], linha[3]};
+        }
+        
+        return dadosArray;
+    }
+
+    @Test(dataProvider = "dadosCalculadora", description = "Testes de soma com dados do CSV")
+    public void testeSomaComCSV(String num1, String operacao, String num2, String resultadoEsperado) {
+        CalculadoraPage calculadora = new CalculadoraPage(driver);
+        
+        calculadora.realizarSoma(num1, num2);
+        
+        String resultado = calculadora.obterResultado();
+        Assert.assertEquals(resultado, resultadoEsperado, 
+            String.format("O resultado de %s %s %s deve ser %s", num1, operacao, num2, resultadoEsperado));
+        
+        System.out.println(String.format("✅ Teste CSV executado: %s %s %s = %s", 
+            num1, operacao, num2, resultado));
     }
 
     @AfterEach
