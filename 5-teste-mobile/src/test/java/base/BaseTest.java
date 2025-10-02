@@ -1,17 +1,17 @@
 package base;
 
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.android.AndroidDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
 
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+
+import io.appium.java_client.android.AndroidDriver;
+
 public class BaseTest {
-    protected AppiumDriver driver; // Removido <MobileElement>
+    protected AndroidDriver driver; // Usar AndroidDriver diretamente
     
     // Configurações do SauceLabs (igual ao seu projeto calculadora142)
     private static final String SAUCE_USERNAME = "oauth-danillo-75a98";
@@ -42,8 +42,8 @@ public class BaseTest {
         caps.setCapability("sauce:options", getSauceOptions());
         
         System.out.println("📱 Conectando ao SauceLabs...");
-        driver = new AndroidDriver(new URL(SAUCE_URL), caps); // Removido <MobileElement>
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+        driver = new AndroidDriver(new URL(SAUCE_URL), caps);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         
         System.out.println("✅ Conectado ao SauceLabs com sucesso!");
     }
