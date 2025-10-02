@@ -25,20 +25,18 @@ public class BaseTest {
         
         DesiredCapabilities caps = new DesiredCapabilities();
         
-        // Configurações básicas da plataforma
+        // Configurações baseadas no repositório que funciona
         caps.setCapability("platformName", "Android");
-        caps.setCapability("appium:platformVersion", "12.0");
-        caps.setCapability("appium:deviceName", "Google Pixel 6 GoogleAPI Emulator");
+        caps.setCapability("appium:platformVersion", "9.0");
+        caps.setCapability("appium:deviceName", "Google Pixel 3 GoogleAPI Emulator");
         caps.setCapability("appium:automationName", "UiAutomator2");
         
-        // Configuração para app nativo - REMOVER browserName
+        // App da calculadora do Google
+        caps.setCapability("browserName", "");
         caps.setCapability("appium:appPackage", "com.google.android.calculator");
         caps.setCapability("appium:appActivity", "com.android.calculator2.Calculator");
         caps.setCapability("appium:noReset", true);
         caps.setCapability("appium:autoGrantPermissions", true);
-        
-        // Configurações adicionais
-        caps.setCapability("appium:newCommandTimeout", 300);
         
         // Configurações específicas do SauceLabs
         caps.setCapability("sauce:options", getSauceOptions());
@@ -57,7 +55,7 @@ public class BaseTest {
         sauceOptions.put("build", "Calculadora Google - Teste Mobile v1.0");
         sauceOptions.put("name", "Testes de Soma com Page Objects e CSV");
         sauceOptions.put("deviceOrientation", "portrait");
-        sauceOptions.put("appiumVersion", "2.0.0"); // Versão mais recente
+        // Remover appiumVersion para usar a versão padrão estável
         return sauceOptions;
     }
 
