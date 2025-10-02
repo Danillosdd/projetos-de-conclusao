@@ -25,14 +25,13 @@ public class BaseTest {
         
         DesiredCapabilities caps = new DesiredCapabilities();
         
-        // Configurações básicas da plataforma - DISPOSITIVOS VÁLIDOS
+        // Configurações básicas da plataforma
         caps.setCapability("platformName", "Android");
         caps.setCapability("appium:platformVersion", "12.0");
         caps.setCapability("appium:deviceName", "Google Pixel 6 GoogleAPI Emulator");
         caps.setCapability("appium:automationName", "UiAutomator2");
         
-        // Usar calculadora padrão do Android
-        caps.setCapability("browserName", ""); // Necessário para apps nativos
+        // Configuração para app nativo - REMOVER browserName
         caps.setCapability("appium:appPackage", "com.google.android.calculator");
         caps.setCapability("appium:appActivity", "com.android.calculator2.Calculator");
         caps.setCapability("appium:noReset", true);
@@ -58,7 +57,7 @@ public class BaseTest {
         sauceOptions.put("build", "Calculadora Google - Teste Mobile v1.0");
         sauceOptions.put("name", "Testes de Soma com Page Objects e CSV");
         sauceOptions.put("deviceOrientation", "portrait");
-        sauceOptions.put("appiumVersion", "1.22.3"); // Versão estável
+        sauceOptions.put("appiumVersion", "2.0.0"); // Versão mais recente
         return sauceOptions;
     }
 
@@ -67,7 +66,7 @@ public class BaseTest {
         if (driver != null) {
             System.out.println("🔚 Finalizando sessão SauceLabs...");
             driver.quit();
-            System.out.println("✅ Sessão SauceLabs finalizada!");ntln("✅ Sessão SauceLabs finalizada!");
+            System.out.println("✅ Sessão SauceLabs finalizada!");
         }
     }
 }
