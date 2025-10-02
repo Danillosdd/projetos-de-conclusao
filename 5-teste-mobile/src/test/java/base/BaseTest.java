@@ -25,35 +25,36 @@ public class BaseTest {
         
         DesiredCapabilities caps = new DesiredCapabilities();
         
-        // ✅ CORREÇÃO: Configuração baseada no projeto calculadora142 que funciona
+        // Capabilities básicas do Android
         caps.setCapability("platformName", "Android");
-        caps.setCapability("appium:platformVersion", "9.0");  // Volta para 9.0
-        caps.setCapability("appium:deviceName", "Google Pixel 3 GoogleAPI Emulator");  // Nome válido
+        caps.setCapability("appium:platformVersion", "9.0");
+        caps.setCapability("appium:deviceName", "Google Pixel 3 GoogleAPI Emulator");
         caps.setCapability("appium:automationName", "UiAutomator2");
         
-        // A capability 'app' DEVE estar no nível raiz
+        // Para apps nativos no SauceLabs, use app capability com storage
         caps.setCapability("app", "storage:filename=Calculator_8.6.1.apk");
         
-        // Configurações específicas do SauceLabs usando baseOptions
-        caps.setCapability("sauce:options", getBaseOptions());
+        // Configurações específicas do SauceLabs
+        caps.setCapability("sauce:options", getSauceOptions());
         
         System.out.println("📱 Conectando ao SauceLabs...");
         driver = new AndroidDriver(new URL(SAUCE_URL), caps);
+        
+        // Configuração de timeout
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         
         System.out.println("✅ Conectado ao SauceLabs com sucesso!");
     }
     
-    private Object getBaseOptions() {
-        java.util.Map<String, Object> baseOptions = new java.util.HashMap<>();
-        baseOptions.put("username", SAUCE_USERNAME);
-        baseOptions.put("accessKey", SAUCE_ACCESS_KEY);
-        baseOptions.put("build", "Calculadora Google - Teste Mobile v1.0");
-        baseOptions.put("name", "Testes de Soma com Page Objects e CSV");
-        baseOptions.put("deviceOrientation", "portrait");
-        // ✅ CORREÇÃO: Usar versão compatível com Android 9.0, sem especificar appiumVersion
-        // baseOptions.put("appiumVersion", "2.0.0");  // Removido - deixar SauceLabs escolher
-        return baseOptions;
+    private Object getSauceOptions() {
+        java.util.Map<String, Object> sauceOptions = new java.util.HashMap<>();
+        sauceOptions.put("username", SAUCE_USERNAME);
+        sauceOptions.put("accessKey", SAUCE_ACCESS_KEY);
+        sauceOptions.put("build", "Calculadora Google - Build " + System.currentTimeMillis());
+        sauceOptions.put("name", "Teste Calculadora Android - " + java.time.LocalDateTime.now());
+        sauceOptions.put("deviceOrientation", "portrait");
+        
+        return sauceOptions;
     }
 
     @AfterMethod
